@@ -71,20 +71,20 @@
 <body><div class="layout">
   <aside class="side">
     <div class="brand">Eibee 洞察中心<i>Insight Center</i></div>
-    <div class="group">本期报告 · 2026-11</div>
-    <a href="report-1-performance-engine.html" class="nav on">01 趋势报告 · 预算迁移</a>
-    <a href="report-2-ranking-systems.html" class="nav">02 平台机制 · 排序逻辑</a>
-    <a href="report-3-views-vs-value.html" class="nav">03 指标口径 · 三层体系</a>
-    <a href="report-4-us-rate-card.html" class="nav">04 商业合作 · 美区行情</a>
-    <a href="report-5-ai-trust.html" class="nav">05 生态与AI · 信任账</a>
-    <a href="report-6-disclosure-compliance.html" class="nav">06 合规风向 · 披露规则</a>
-    <div class="group">更多</div>
-    <a class="nav" href="https://www.eibee.ai" target="_blank">Eibee 官网</a>
+    <div class="group" data-zh="本期报告 · 2026-11" data-en="This Issue · 2026-11">本期报告 · 2026-11</div>
+    <a href="report-1-performance-engine.html" class="nav on" data-zh="01 趋势报告 · 预算迁移" data-en="01 Trends · Budget Shift">01 趋势报告 · 预算迁移</a>
+    <a href="report-2-ranking-systems.html" class="nav" data-zh="02 平台机制 · 排序逻辑" data-en="02 Platform · Ranking Logic">02 平台机制 · 排序逻辑</a>
+    <a href="report-3-views-vs-value.html" class="nav" data-zh="03 指标口径 · 三层体系" data-en="03 Metrics · Three Layers">03 指标口径 · 三层体系</a>
+    <a href="report-4-us-rate-card.html" class="nav" data-zh="04 商业合作 · 美区行情" data-en="04 Commercial · US Rates">04 商业合作 · 美区行情</a>
+    <a href="report-5-ai-trust.html" class="nav" data-zh="05 生态与AI · 信任账" data-en="05 Ecosystem & AI · Trust">05 生态与AI · 信任账</a>
+    <a href="report-6-disclosure-compliance.html" class="nav" data-zh="06 合规风向 · 披露规则" data-en="06 Compliance · Disclosure">06 合规风向 · 披露规则</a>
+    <div class="group" data-zh="更多" data-en="More">更多</div>
+    <a class="nav" href="https://www.eibee.ai" target="_blank" data-zh="Eibee 官网" data-en="Eibee Website">Eibee 官网</a>
   </aside>
   <div class="paper">
   <div class="masthead"><b>EIBEE INSIGHTS</b><span>Monthly Report · No.11 / Nov 2026</span></div>
 
-  <div class="kicker"><span class="pill">TREND REPORT · 趋势报告</span></div>
+  <div class="kicker"><span class="pill" data-zh="TREND REPORT · 趋势报告" data-en="TREND REPORT">TREND REPORT · 趋势报告</span></div>
   <h1 data-zh="从曝光工具到表现引擎：2026 红人营销的预算迁移" data-en="From Exposure Tool to Performance Engine: Where Creator Budgets Are Moving in 2026">从曝光工具到表现引擎：2026 红人营销的预算迁移</h1>
   <div class="deck" data-zh="微型创作者互动率约为头部账号 3 倍、单条成本低约 60%，预算正从买曝光转向按效果结算的长期合作。" data-en="Micro creators deliver about 3x the engagement of top-tier accounts at roughly 60% lower cost per post — and budgets are shifting from buying impressions to long-term, performance-based partnerships.">微型创作者互动率约为头部账号 3 倍、单条成本低约 60%，预算正从买曝光转向按效果结算的长期合作。</div>
   <div class="meta">
@@ -190,7 +190,7 @@
   </div>
   <div class="disclaimer">本报告由 EIBEE Insights 编制，数据与观点整理自公开行业报告与监管文件，标注的报价区间为行业公开汇总值，实际成交以询价为准。报告内容供出海营销决策参考，不构成法律或投资建议。</div>
   <div class="pager">
-    <a class="next" href="report-2-ranking-systems.html"><span>下一篇 NEXT →</span><b>02 平台机制 · 排序逻辑｜不止一套算法：Feed、Reels、Stories 与推荐流的排序逻辑</b></a>
+    <a class="next" href="report-2-ranking-systems.html"><span data-zh="下一篇 NEXT →" data-en="NEXT →">下一篇 NEXT →</span><b data-zh="02 平台机制 · 排序逻辑｜不止一套算法：Feed、Reels、Stories 与推荐流的排序逻辑" data-en="More Than One Algorithm: How Feed, Reels, Stories and Recommendations Rank Content">02 平台机制 · 排序逻辑｜不止一套算法：Feed、Reels、Stories 与推荐流的排序逻辑</b></a>
   </div>
 </div>
 </div>
@@ -198,6 +198,7 @@
 function show(id,btn){['cn','en'].forEach(k=>document.getElementById(k).classList.toggle('show',k===id));
 document.querySelectorAll('[data-zh]').forEach(el=>el.innerHTML=id==='en'?el.dataset.en:el.dataset.zh);
 document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+(function(){var m=location.search.match(/[?&]lang=(en|cn)/i);if(m){var i=m[1].toLowerCase()==='en'?1:0;var b=document.querySelectorAll('.toggle button');if(b[i])show(m[1].toLowerCase(),b[i]);}})();
 </script>
 </body>
 </html>

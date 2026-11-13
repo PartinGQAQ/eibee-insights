@@ -71,20 +71,20 @@
 <body><div class="layout">
   <aside class="side">
     <div class="brand">Eibee 洞察中心<i>Insight Center</i></div>
-    <div class="group">本期报告 · 2026-11</div>
-    <a href="report-1-performance-engine.html" class="nav">01 趋势报告 · 预算迁移</a>
-    <a href="report-2-ranking-systems.html" class="nav">02 平台机制 · 排序逻辑</a>
-    <a href="report-3-views-vs-value.html" class="nav">03 指标口径 · 三层体系</a>
-    <a href="report-4-us-rate-card.html" class="nav">04 商业合作 · 美区行情</a>
-    <a href="report-5-ai-trust.html" class="nav">05 生态与AI · 信任账</a>
-    <a href="report-6-disclosure-compliance.html" class="nav on">06 合规风向 · 披露规则</a>
-    <div class="group">更多</div>
-    <a class="nav" href="https://www.eibee.ai" target="_blank">Eibee 官网</a>
+    <div class="group" data-zh="本期报告 · 2026-11" data-en="This Issue · 2026-11">本期报告 · 2026-11</div>
+    <a href="report-1-performance-engine.html" class="nav" data-zh="01 趋势报告 · 预算迁移" data-en="01 Trends · Budget Shift">01 趋势报告 · 预算迁移</a>
+    <a href="report-2-ranking-systems.html" class="nav" data-zh="02 平台机制 · 排序逻辑" data-en="02 Platform · Ranking Logic">02 平台机制 · 排序逻辑</a>
+    <a href="report-3-views-vs-value.html" class="nav" data-zh="03 指标口径 · 三层体系" data-en="03 Metrics · Three Layers">03 指标口径 · 三层体系</a>
+    <a href="report-4-us-rate-card.html" class="nav" data-zh="04 商业合作 · 美区行情" data-en="04 Commercial · US Rates">04 商业合作 · 美区行情</a>
+    <a href="report-5-ai-trust.html" class="nav" data-zh="05 生态与AI · 信任账" data-en="05 Ecosystem & AI · Trust">05 生态与AI · 信任账</a>
+    <a href="report-6-disclosure-compliance.html" class="nav on" data-zh="06 合规风向 · 披露规则" data-en="06 Compliance · Disclosure">06 合规风向 · 披露规则</a>
+    <div class="group" data-zh="更多" data-en="More">更多</div>
+    <a class="nav" href="https://www.eibee.ai" target="_blank" data-zh="Eibee 官网" data-en="Eibee Website">Eibee 官网</a>
   </aside>
   <div class="paper">
   <div class="masthead"><b>EIBEE INSIGHTS</b><span>Monthly Report · No.11 / Nov 2026</span></div>
 
-  <div class="kicker"><span class="pill">COMPLIANCE · 合规风向</span></div>
+  <div class="kicker"><span class="pill" data-zh="COMPLIANCE · 合规风向" data-en="COMPLIANCE">COMPLIANCE · 合规风向</span></div>
   <h1 data-zh="美/加披露规则更新：AI 内容与联盟链接都在监管范围内" data-en="US &amp; Canada Disclosure Updates: AI Content and Affiliate Links Are Both in Scope">美/加披露规则更新：AI 内容与联盟链接都在监管范围内</h1>
   <div class="deck" data-zh="美加监管 2026 年进入执法期：漏标披露单条罚款最高 53,088 美元，AI 内容需标注 #MadeWithAI，联盟链接逐帖披露。" data-en="US and Canadian enforcement entered a new phase in 2026: fines up to $53,088 per undisclosed post, #MadeWithAI labels required for AI content, and affiliate links disclosed on every post.">美加监管 2026 年进入执法期：漏标披露单条罚款最高 53,088 美元，AI 内容需标注 #MadeWithAI，联盟链接逐帖披露。</div>
   <div class="meta">
@@ -202,7 +202,7 @@
   </div>
   <div class="disclaimer">本报告由 EIBEE Insights 编制，法规与指南内容整理自公开文件与律所评述，具体案件请咨询专业法律顾问。报告内容供出海营销决策参考，不构成法律或投资建议。</div>
   <div class="pager">
-    <a class="prev" href="report-5-ai-trust.html"><span>← 上一篇 PREV</span><b>05 生态与AI · 信任账｜AI 内容的信任账：平台在降权，观众要标注，品牌怎么办</b></a>
+    <a class="prev" href="report-5-ai-trust.html"><span data-zh="← 上一篇 PREV" data-en="← PREVIOUS">← 上一篇 PREV</span><b data-zh="05 生态与AI · 信任账｜AI 内容的信任账：平台在降权，观众要标注，品牌怎么办" data-en="The Trust Bill for AI Content: Platforms Demote It, Audiences Want Labels">05 生态与AI · 信任账｜AI 内容的信任账：平台在降权，观众要标注，品牌怎么办</b></a>
   </div>
 </div>
 </div>
@@ -210,6 +210,7 @@
 function show(id,btn){['cn','en'].forEach(k=>document.getElementById(k).classList.toggle('show',k===id));
 document.querySelectorAll('[data-zh]').forEach(el=>el.innerHTML=id==='en'?el.dataset.en:el.dataset.zh);
 document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+(function(){var m=location.search.match(/[?&]lang=(en|cn)/i);if(m){var i=m[1].toLowerCase()==='en'?1:0;var b=document.querySelectorAll('.toggle button');if(b[i])show(m[1].toLowerCase(),b[i]);}})();
 </script>
 </body>
 </html>
