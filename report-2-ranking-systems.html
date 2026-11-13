@@ -37,9 +37,15 @@
   .side a.nav:hover{background:var(--primary-soft);color:var(--link)}
   .side a.nav.on{background:var(--primary-soft);color:var(--link);font-weight:600}
 
-  .paper{flex:1;min-width:0;margin:48px 48px 80px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:52px 56px 44px;box-shadow:var(--shadow-md)}
+  .paper{flex:1;min-width:0;margin:40px 56px 90px;padding:0}
   .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#4b83f4,#7c4fe8) 1;padding-bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:30px}
   .masthead b{color:var(--ink);letter-spacing:.2em}
+  .hero{position:relative;background:var(--band);border:1px solid var(--line);border-radius:20px;padding:28px 34px 26px;margin-bottom:38px;overflow:hidden}
+  .hero::after{content:"";position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(91,124,244,.13) 0%,rgba(124,79,232,.08) 45%,transparent 70%);pointer-events:none}
+  .hero>*{position:relative;z-index:1}
+  .hero .masthead{margin-bottom:24px}
+  .hero .meta{margin-bottom:0;border-bottom:none}
+
   .kicker{margin:0 0 16px}
   .pill{display:inline-block;padding:3px 12px;border-radius:999px;background:var(--panel);color:var(--link);border:1px solid var(--line-strong);font-family:var(--mono);font-size:11px;letter-spacing:.12em}
   h1{font-family:var(--title);font-size:clamp(26px,3.6vw,34px);font-weight:900;line-height:1.3;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--indigo);margin:0 0 16px}
@@ -56,7 +62,7 @@
   p{margin-bottom:16px;font-size:15px;color:var(--ink-2);line-height:1.85}
   p strong,li strong{color:var(--ink)}
   ul,ol{margin:0 0 16px 22px}li{margin-bottom:9px;font-size:15px;color:var(--ink-2);line-height:1.8}
-  .takeaways{background:var(--band);border:1px solid var(--line);border-radius:var(--r-md);padding:22px 26px;margin-bottom:34px}
+  .takeaways{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);padding:22px 26px;margin-bottom:34px;box-shadow:var(--shadow-sm)}
   .takeaways h3{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--link);text-transform:uppercase;margin-bottom:12px}
   .takeaways li{font-size:14.5px;margin-bottom:7px}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0 30px}
@@ -74,7 +80,7 @@
   .sources li{font-size:13px;margin-bottom:8px;color:var(--ink-3)}
   .sources a{color:var(--link);text-decoration:none;word-break:break-all}
   .sources a:hover{text-decoration:underline}
-  .disclaimer{margin-top:20px;font-size:12px;color:var(--grey);line-height:1.8;background:var(--paper-2);border-radius:var(--r-md);padding:16px 20px}
+  .disclaimer{margin-top:20px;font-size:12px;color:var(--grey);line-height:1.8;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);padding:16px 20px}
   .pager{display:flex;gap:14px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
   .pager a{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);padding:16px 20px;text-decoration:none;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s,border-color .2s}
   .pager a:hover{transform:translateY(-3px);border-color:#a8b8f5;box-shadow:var(--shadow-acc)}
@@ -96,6 +102,7 @@
     .layout{display:block;background:none}.side{display:none}
     .paper{margin:0 auto;box-shadow:none;border:none;border-radius:0;max-width:none;padding:0}
     h1,h2 .num,.stat b{-webkit-text-fill-color:currentColor;color:var(--indigo)}
+    .hero{background:none;border:none;padding:0;box-shadow:none}.hero::after{display:none}
     .takeaways,.sources,.disclaimer{box-shadow:none}
   }
 </style>
@@ -114,6 +121,7 @@
     <a class="nav" href="https://www.eibee.ai" target="_blank" data-zh="Eibee 官网" data-en="Eibee Website">Eibee 官网</a>
   </aside>
   <div class="paper">
+  <div class="hero">
   <div class="masthead"><b>EIBEE INSIGHTS</b><span>Monthly Report · No.11 / Nov 2026</span></div>
 
   <div class="kicker"><span class="pill" data-zh="PLATFORM MECHANICS · 平台机制" data-en="PLATFORM MECHANICS">PLATFORM MECHANICS · 平台机制</span></div>
@@ -125,6 +133,8 @@
     <span data-zh="篇幅 &lt;b&gt;约 1,800 字&lt;/b&gt;" data-en="Length &lt;b&gt;~1,800 words&lt;/b&gt;">篇幅 <b>约 1,800 字</b></span>
     <span data-zh="数据来源 &lt;b&gt;3 份公开基准&lt;/b&gt;" data-en="Sources &lt;b&gt;3 public benchmarks&lt;/b&gt;">数据来源 <b>3 份公开基准</b></span>
     <span class="toggle"><button class="on" onclick="show('cn',this)">中文</button><button onclick="show('en',this)">EN</button></span>
+  </div>
+
   </div>
 
   <section id="cn" class="show">
