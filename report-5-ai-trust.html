@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
+<title>AI 内容的信任账：平台在降权，观众要标注，品牌怎么办 | EIBEE Insights 第 11 期</title>
+<style>
+  :root{--ink:#14161d;--ink2:#3a3f4d;--muted:#7b8190;--line:#e7e9ef;--accent:#5b3df5}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#eceef4;font-family:-apple-system,"PingFang SC","Helvetica Neue",Arial,sans-serif;color:var(--ink);line-height:1.95}
+  .paper{max-width:880px;margin:36px auto;background:#fff;padding:64px 72px 56px;box-shadow:0 2px 18px rgba(20,22,29,.06)}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .masthead b{color:var(--ink);letter-spacing:.2em}
+  .kicker{margin-top:34px}
+  .pill{display:inline-block;background:#fdeef4;color:#c0246b;font-size:12px;font-weight:600;padding:5px 14px;border-radius:3px}
+  h1{font-size:34px;line-height:1.35;letter-spacing:-.01em;margin:18px 0 14px;font-weight:700}
+  .deck{font-size:16.5px;color:var(--ink2);line-height:1.8;border-left:3px solid var(--ink);padding-left:16px;margin-bottom:26px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:30px}
+  .meta b{color:var(--ink);font-weight:600}
+  .toggle{margin-left:auto}
+  .toggle button{border:1px solid var(--line);background:#fff;color:var(--muted);font-size:12px;padding:4px 12px;cursor:pointer}
+  .toggle button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  section{display:none}section.show{display:block}
+  h2{font-size:20px;margin:40px 0 14px;font-weight:700;display:flex;align-items:baseline;gap:12px}
+  h2 .num{font-size:12px;color:var(--accent);letter-spacing:.14em;font-weight:700}
+  p{margin-bottom:15px;font-size:15.5px;color:var(--ink2)}
+  ul,ol{margin:0 0 16px 22px}li{margin-bottom:9px;font-size:15.5px;color:var(--ink2)}
+  .takeaways{background:#fdf5f8;border:1px solid #f6d8e4;padding:22px 26px;margin-bottom:32px}
+  .takeaways h3{font-size:12.5px;letter-spacing:.12em;color:#c0246b;text-transform:uppercase;margin-bottom:12px}
+  .takeaways li{font-size:14.5px;margin-bottom:7px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:22px 0 26px}
+  .stat{background:#fafbfd;padding:18px}
+  .stat b{display:block;font-size:24px;letter-spacing:-.02em;line-height:1.2}
+  .stat i{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+  table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:14px}
+  th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+  th{background:#f7f8fb;font-size:12.5px;font-weight:600;letter-spacing:.04em;border-top:2px solid var(--ink)}
+  blockquote{margin:24px 0;padding:18px 24px;background:#fafbfd;border-left:3px solid var(--accent);font-size:15.5px;color:var(--ink)}
+  .sources{margin-top:46px;border-top:2px solid var(--ink);padding-top:18px}
+  .sources h3{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .sources li{font-size:13px;margin-bottom:8px}
+  .sources a{color:var(--accent);text-decoration:none;word-break:break-all}
+  .disclaimer{margin-top:28px;font-size:12px;color:var(--muted);line-height:1.8;background:#f7f8fb;padding:16px 20px}
+  @media(max-width:700px){.paper{padding:36px 22px;margin:0}.stats{grid-template-columns:1fr}h1{font-size:26px}}
+  @media print{body{background:#fff}.paper{box-shadow:none;margin:0;max-width:none}}
+
+  .layout{display:flex;min-height:100vh}
+  .side{width:250px;flex-shrink:0;background:#fff;border-right:1px solid #e6e7ee;padding:34px 26px;position:sticky;top:0;height:100vh;overflow:auto}
+  .pager{display:flex;gap:14px;margin-top:44px;padding-top:26px;border-top:1px solid #e6e7ee}
+  .pager a{flex:1;background:#f6f5ff;border:1px solid #e3e0ff;border-radius:12px;padding:14px 18px;text-decoration:none;transition:.15s}
+  .pager a:hover{background:#eeebff;border-color:#c9c2ff}
+  .pager a span{display:block;font-size:11.5px;color:#8a84c9;letter-spacing:.08em;margin-bottom:6px}
+  .pager a b{font-size:14px;color:#2b2d3f;line-height:1.45;font-weight:600}
+  .pager a.next{text-align:right}
+  @media(max-width:700px){.pager{flex-direction:column}.pager a.next{text-align:left}}
+  .brand{font-size:17px;font-weight:700;color:#1a1b22;margin-bottom:30px;letter-spacing:.02em;line-height:1.4}
+  .brand i{display:block;font-style:normal;font-size:11px;font-weight:500;color:#8a8fa0;letter-spacing:.14em;margin-top:4px;text-transform:uppercase}
+  .group{font-size:11.5px;color:#8a8fa0;letter-spacing:.1em;margin:26px 0 10px}
+  .side a.nav{display:block;font-size:13.5px;color:#3a3f4d;text-decoration:none;padding:7px 12px;border-radius:8px;margin-bottom:2px;transition:.15s}
+  .side a.nav:hover{background:#fff;color:#1a1b22}
+  .side a.nav.on{background:#f2f0ff;color:#6a5cff;font-weight:600}
+  .paper{margin:36px auto 60px}
+  .layout{padding-right:12px}
+  @media(max-width:1100px){.paper{margin:36px auto 60px}}
+  @media(max-width:900px){.layout{flex-direction:column}.side{position:static;width:100%;height:auto;padding:24px}.paper{margin:0 auto 60px}}
+  @media print{.layout{display:block}.side{display:none}.paper{margin:0 auto}}
+</style>
+</head>
+<body><div class="layout">
+  <aside class="side">
+    <div class="brand">Eibee 洞察中心<i>Insight Center</i></div>
+    <div class="group">本期报告 · 2026-11</div>
+    <a href="report-1-performance-engine.html?sharecode=OIII2LTIPX" class="nav">01 趋势报告 · 预算迁移</a>
+    <a href="report-2-ranking-systems.html?sharecode=OIII2LTIPX" class="nav">02 平台机制 · 排序逻辑</a>
+    <a href="report-3-views-vs-value.html?sharecode=OIII2LTIPX" class="nav">03 指标口径 · 三层体系</a>
+    <a href="report-4-us-rate-card.html?sharecode=OIII2LTIPX" class="nav">04 商业合作 · 美区行情</a>
+    <a href="report-5-ai-trust.html?sharecode=OIII2LTIPX" class="nav on">05 生态与AI · 信任账</a>
+    <a href="report-6-disclosure-compliance.html?sharecode=OIII2LTIPX" class="nav">06 合规风向 · 披露规则</a>
+    <div class="group">更多</div>
+    <a class="nav" href="https://www.eibee.ai" target="_blank">Eibee 官网</a>
+  </aside>
+  <div class="paper">
+  <div class="masthead"><b>EIBEE INSIGHTS</b><span>Monthly Report · No.11 / Nov 2026</span></div>
+
+  <div class="kicker"><span class="pill">ECOSYSTEM &amp; AI · 生态与AI</span></div>
+  <h1 data-zh="AI 内容的信任账：平台在降权，观众要标注，品牌怎么办" data-en="The Trust Bill for AI Content: Platforms Demote It, Audiences Want Labels — What Brands Should Do">AI 内容的信任账：平台在降权，观众要标注，品牌怎么办</h1>
+  <div class="deck" data-zh="YouTube 对量产内容取消变现资格，公众对 AI 内容的负面观感上升；AI 辅助与 AI 量产之间的边界，正在变成信任的分水岭。" data-en="YouTube has pulled monetization from mass-produced content and public sentiment toward AI content is turning negative; the line between AI-assisted and mass-produced AI is becoming the trust dividing line.">YouTube 对量产内容取消变现资格，公众对 AI 内容的负面观感上升；AI 辅助与 AI 量产之间的边界，正在变成信任的分水岭。</div>
+  <div class="meta">
+    <span data-zh="发布 &lt;b&gt;2026.11.11&lt;/b&gt;" data-en="Published &lt;b&gt;Nov 11, 2026&lt;/b&gt;">发布 <b>2026.11.11</b></span>
+    <span data-zh="期号 &lt;b&gt;2026-11&lt;/b&gt;" data-en="Issue &lt;b&gt;2026-11&lt;/b&gt;">期号 <b>2026-11</b></span>
+    <span data-zh="篇幅 &lt;b&gt;约 1,900 字&lt;/b&gt;" data-en="Length &lt;b&gt;~1,900 words&lt;/b&gt;">篇幅 <b>约 1,900 字</b></span>
+    <span data-zh="数据来源 &lt;b&gt;4 份公开资料&lt;/b&gt;" data-en="Sources &lt;b&gt;4 public references&lt;/b&gt;">数据来源 <b>4 份公开资料</b></span>
+    <span class="toggle"><button class="on" onclick="show('cn',this)">中文</button><button onclick="show('en',this)">EN</button></span>
+  </div>
+
+  <section id="cn" class="show">
+    <div class="takeaways">
+      <h3>核心结论 Key Takeaways</h3>
+      <ol>
+        <li>2025 年 7 月 15 日起，YouTube 把「重复内容政策」改为「不真实内容政策」：量产、模板化内容不可变现——针对的是量产，不是 AI 本身。</li>
+        <li>超过 40% 的 YouTube Shorts 已包含某种形式的 AI；平台要求对以假乱真的合成内容进行标注。</li>
+        <li>39% 的美国成年人认为 AI 弊大于利（18–29 岁达 47%），较一年前上升 8 个百分点。</li>
+        <li>62% 的加拿大人对「红人必须披露合作关系」感到安心——透明度是信任来源，不是负担。</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>平台先动手：变现规则划出「量产线」</h2>
+    <p>2025 年 7 月 15 日，YouTube 把「重复内容政策」升级更名为「不真实内容政策」：量产、模板化、缺乏原创观点的内容不再具备变现资格。需要注意，这不是对 AI 的禁令——用 AI 写脚本、做缩图、配音辅助的频道仍然可以变现；被划走的是「换了标题就再发一条」的模板化生产。</p>
+    <p>据公开报道，YouTube Shorts 中超过 40% 的内容已包含某种形式的 AI。平台同时要求创作者对以假乱真的合成内容进行标注，违者面临强制加标、下架或移出合作伙伴计划。</p>
+    <p>这条规则对品牌方的含义很直接：如果合作创作者的内容是流水线量产的，不仅观众不买账，连平台的变现资格都可能失去——你投放的长期价值会随内容质量一起清零。</p>
+    <div class="stats">
+      <div class="stat"><b>2025.7.15</b><i>YouTube 不真实内容政策生效日</i></div>
+      <div class="stat"><b>40%+</b><i>含 AI 元素的 YouTube Shorts 占比</i></div>
+      <div class="stat"><b>39%</b><i>认为 AI 弊大于利的美国成年人比例</i></div>
+    </div>
+
+    <h2><span class="num">02</span>观众端：负面观感在累积，标注反而是加分项</h2>
+    <p>公众情绪也在转向。盖洛普 2025 年 7 月的调查显示，39% 的美国成年人认为 AI 弊大于利，较一年前上升 8 个百分点，18–29 岁人群中这一比例达 47%。「AI slop」（AI 泔水内容）成为流行批评词，公众对低质生成内容的容忍度在快速下降。</p>
+    <p>但另一面同样成立：加拿大方面的调研显示，62% 的受访者对「创作者被要求披露合作关系」感到安心。透明并不削弱说服力，反而降低观众的抵触——这条结论对所有 AI 相关的披露都适用。</p>
+
+    <h2><span class="num">03</span>规则收紧的三个具体方向</h2>
+    <table>
+      <tr><th>方向</th><th>要求</th><th>对品牌的影响</th></tr>
+      <tr><td>AI 身份</td><td>虚拟红人须标注身份（#AIinfluencer / #VirtualInfluencer）</td><td>虚拟人设可用于品牌自有内容，但不可伪装真人代言</td></tr>
+      <tr><td>AI 画面</td><td>AI 生成或显著修改的产品画面须标注（#MadeWithAI）</td><td>产品效果图、使用场景合成图需同步准备披露文案</td></tr>
+      <tr><td>代言边界</td><td>AI 红人不得代言其无法亲身体验的属性（如味觉、气味）</td><td>食品、美妆类目需特别注意，不能由虚拟形象做感官背书</td></tr>
+    </table>
+    <p>美国 FTC 的背书指南对「实质性关联」的披露要求同样适用于 AI 生成的推荐内容；平台侧的合成内容标注规则与之并行，两者不互相替代。</p>
+
+    <h2><span class="num">04</span>品牌的应对：把 AI 放在「辅助」位置</h2>
+    <ul>
+      <li><b>签约前看生产方式</b>：了解创作者的工作流，区分「AI 辅助的高质量创作」与「模板化量产」，后者一票否决。</li>
+      <li><b>Brief 里写明标注义务</b>：涉及 AI 合成画面或虚拟形象的内容，标注要求写入合约，与披露义务同等对待。</li>
+      <li><b>人设不可替代</b>：真实体验、真人出镜、个人观点是信任来源，也是平台政策保护的对象。</li>
+      <li><b>用 AI 提升运营而非制造内容</b>：筛选、匹配、数据复盘交给 AI，创意与表达留给创作者。</li>
+    </ul>
+    <blockquote>信任是红人营销唯一的复利资产。AI 时代真正稀缺的，是「看起来依然像一个真实的人」的内容。</blockquote>
+  </section>
+
+  <section id="en">
+    <div class="takeaways">
+      <h3>Key Takeaways</h3>
+      <ol>
+        <li>Since July 15, 2025, YouTube's Repetitious Content policy became the Inauthentic Content policy: mass-produced, templated content is ineligible for monetization — aimed at mass production, not AI itself.</li>
+        <li>Over 40% of YouTube Shorts already contain some form of AI; platforms require disclosure of realistic synthetic media.</li>
+        <li>39% of US adults believe AI does more harm than good (47% among 18–29s), up 8 points year over year.</li>
+        <li>62% of Canadians feel comforted that influencers must disclose brand relationships — transparency builds trust rather than eroding it.</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>Platforms moved first: monetization draws the mass-production line</h2>
+    <p>On July 15, 2025, YouTube renamed its Repetitious Content policy to the Inauthentic Content policy: mass-produced, templated videos lacking original perspective are no longer eligible for monetization. This is not a ban on AI — channels using AI for scripts, thumbnails or voice assistance remain monetizable; what loses eligibility is template production that changes only the title.</p>
+    <p>Public reporting suggests over 40% of YouTube Shorts already contain some form of AI. Platforms also require creators to disclose realistic synthetic media, with enforcement including forced labeling, removal or suspension from the Partner Program.</p>
+    <p>For brands the implication is direct: if a partner creator's content is factory-produced, audiences won't buy it — and the content may even lose platform monetization, zeroing out the long-term value of your spend.</p>
+    <div class="stats">
+      <div class="stat"><b>Jul 15, 2025</b><i>Effective date of YouTube's inauthentic content policy</i></div>
+      <div class="stat"><b>40%+</b><i>Share of YouTube Shorts containing AI</i></div>
+      <div class="stat"><b>39%</b><i>US adults who say AI does more harm than good</i></div>
+    </div>
+
+    <h2><span class="num">02</span>The audience side: sentiment is souring, disclosure helps</h2>
+    <p>Public sentiment is shifting. Gallup's July 2025 survey found 39% of US adults believe AI does more harm than good, up from 31% a year earlier, rising to 47% among 18–29s. "AI slop" has become a common criticism, and tolerance for low-quality generated content is falling fast.</p>
+    <p>The other side holds too: Canadian research shows 62% of respondents feel comforted that influencers are required to disclose brand relationships. Transparency does not weaken persuasion — it lowers resistance. That applies to AI-related disclosure as much as to ad disclosure.</p>
+
+    <h2><span class="num">03</span>Three directions where rules are tightening</h2>
+    <table>
+      <tr><th>Area</th><th>Requirement</th><th>Impact on brands</th></tr>
+      <tr><td>AI identity</td><td>Virtual influencers must disclose their nature (#AIinfluencer / #VirtualInfluencer)</td><td>Virtual personas work for owned content, but cannot pose as human endorsers</td></tr>
+      <tr><td>AI imagery</td><td>AI-generated or significantly altered product imagery must be labeled (#MadeWithAI)</td><td>Product result shots and synthetic usage scenes need matching disclosure copy</td></tr>
+      <tr><td>Endorsement limits</td><td>AI influencers cannot endorse attributes they cannot experience (taste, smell)</td><td>Food and beauty categories need special care; no sensory claims from virtual personas</td></tr>
+    </table>
+    <p>The US FTC's endorsement guides on material connections apply equally to AI-generated endorsements; platform-level synthetic-content labeling runs in parallel and does not replace them.</p>
+
+    <h2><span class="num">04</span>What brands should do: keep AI in the assist seat</h2>
+    <ul>
+      <li><b>Vet the workflow before signing</b>: distinguish AI-assisted quality creation from templated mass production; veto the latter.</li>
+      <li><b>Put labeling duties in the brief</b>: make AI-synthetic disclosure contractual, treated the same as ad disclosure.</li>
+      <li><b>Persona is irreplaceable</b>: real experience, real faces and personal viewpoints build trust and are what platform policies protect.</li>
+      <li><b>Use AI for operations, not content manufacturing</b>: selection, matching and analytics belong to AI; creativity belongs to creators.</li>
+    </ul>
+    <blockquote>Trust is the only compounding asset in creator marketing. What is scarce in the AI era is content that still looks like it came from a real person.</blockquote>
+  </section>
+
+  <div class="sources">
+    <h3>资料来源 Sources</h3>
+    <ul>
+      <li>The Week — YouTube rolls out new rules to curb AI content（2025-07-15 变现规则与 40% Shorts 数据）：<a href="https://www.theweek.in/news/sci-tech/2025/07/10/youtube-rolls-out-new-rules-to-curb-ai-content-who-is-affected-and-who-is-safe.html">theweek.in</a></li>
+      <li>Layer3 Labs — YouTube's AI Content Policy（披露边界与变现规则解读）：<a href="https://www.layer3labs.io/guides/youtube-ai-content-policy">layer3labs.io</a></li>
+      <li>Publish Nexus — AI Slop Backlash Starts to Reshape Platform Policies（盖洛普调查与平台应对）：<a href="https://www.publish-nexus.com/articles/ai-slop-backlash-starts-to-reshape-platform-policies">publish-nexus.com</a></li>
+      <li>Lexology — Ad Standards 2025 年 10 月指南（AI 红人披露与 62% 信任数据）：<a href="https://www.lexology.com/library/detail.aspx?g=2f8dc537-7c1d-4835-a8d3-5a29afb14f9a">lexology.com</a></li>
+    </ul>
+  </div>
+  <div class="disclaimer">本报告由 EIBEE Insights 编制，平台政策与监管要求会持续更新，执行前请核对官方原文与最新生效日期。报告内容供出海营销决策参考，不构成法律或投资建议。</div>
+  <div class="pager">
+    <a class="prev" href="report-4-us-rate-card.html?sharecode=OIII2LTIPX"><span>← 上一篇 PREV</span><b>04 商业合作 · 美区行情｜2026 美区创作者行情：报价区间、档期与按效果付费</b></a>
+    <a class="next" href="report-6-disclosure-compliance.html?sharecode=OIII2LTIPX"><span>下一篇 NEXT →</span><b>06 合规风向 · 披露规则｜美/加披露规则更新：AI 内容与联盟链接都在监管范围内</b></a>
+  </div>
+</div>
+</div>
+<script>
+function show(id,btn){['cn','en'].forEach(k=>document.getElementById(k).classList.toggle('show',k===id));
+document.querySelectorAll('[data-zh]').forEach(el=>el.innerHTML=id==='en'?el.dataset.en:el.dataset.zh);
+document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+</script>
+</body>
+</html>

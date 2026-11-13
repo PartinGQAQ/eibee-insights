@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
+<title>美/加披露规则更新：AI 内容与联盟链接都在监管范围内 | EIBEE Insights 第 11 期</title>
+<style>
+  :root{--ink:#14161d;--ink2:#3a3f4d;--muted:#7b8190;--line:#e7e9ef;--accent:#5b3df5}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#eceef4;font-family:-apple-system,"PingFang SC","Helvetica Neue",Arial,sans-serif;color:var(--ink);line-height:1.95}
+  .paper{max-width:880px;margin:36px auto;background:#fff;padding:64px 72px 56px;box-shadow:0 2px 18px rgba(20,22,29,.06)}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .masthead b{color:var(--ink);letter-spacing:.2em}
+  .kicker{margin-top:34px}
+  .pill{display:inline-block;background:#eef0ff;color:#4038b8;font-size:12px;font-weight:600;padding:5px 14px;border-radius:3px}
+  h1{font-size:34px;line-height:1.35;letter-spacing:-.01em;margin:18px 0 14px;font-weight:700}
+  .deck{font-size:16.5px;color:var(--ink2);line-height:1.8;border-left:3px solid var(--ink);padding-left:16px;margin-bottom:26px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:30px}
+  .meta b{color:var(--ink);font-weight:600}
+  .toggle{margin-left:auto}
+  .toggle button{border:1px solid var(--line);background:#fff;color:var(--muted);font-size:12px;padding:4px 12px;cursor:pointer}
+  .toggle button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  section{display:none}section.show{display:block}
+  h2{font-size:20px;margin:40px 0 14px;font-weight:700;display:flex;align-items:baseline;gap:12px}
+  h2 .num{font-size:12px;color:var(--accent);letter-spacing:.14em;font-weight:700}
+  p{margin-bottom:15px;font-size:15.5px;color:var(--ink2)}
+  ul,ol{margin:0 0 16px 22px}li{margin-bottom:9px;font-size:15.5px;color:var(--ink2)}
+  .takeaways{background:#f5f6ff;border:1px solid #dcdcf9;padding:22px 26px;margin-bottom:32px}
+  .takeaways h3{font-size:12.5px;letter-spacing:.12em;color:#4038b8;text-transform:uppercase;margin-bottom:12px}
+  .takeaways li{font-size:14.5px;margin-bottom:7px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:22px 0 26px}
+  .stat{background:#fafbfd;padding:18px}
+  .stat b{display:block;font-size:22px;letter-spacing:-.02em;line-height:1.3}
+  .stat i{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+  table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:14px}
+  th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+  th{background:#f7f8fb;font-size:12.5px;font-weight:600;letter-spacing:.04em;border-top:2px solid var(--ink)}
+  blockquote{margin:24px 0;padding:18px 24px;background:#fafbfd;border-left:3px solid var(--accent);font-size:15.5px;color:var(--ink)}
+  .sources{margin-top:46px;border-top:2px solid var(--ink);padding-top:18px}
+  .sources h3{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .sources li{font-size:13px;margin-bottom:8px}
+  .sources a{color:var(--accent);text-decoration:none;word-break:break-all}
+  .disclaimer{margin-top:28px;font-size:12px;color:var(--muted);line-height:1.8;background:#f7f8fb;padding:16px 20px}
+  @media(max-width:700px){.paper{padding:36px 22px;margin:0}.stats{grid-template-columns:1fr}h1{font-size:26px}}
+  @media print{body{background:#fff}.paper{box-shadow:none;margin:0;max-width:none}}
+
+  .layout{display:flex;min-height:100vh}
+  .side{width:250px;flex-shrink:0;background:#fff;border-right:1px solid #e6e7ee;padding:34px 26px;position:sticky;top:0;height:100vh;overflow:auto}
+  .pager{display:flex;gap:14px;margin-top:44px;padding-top:26px;border-top:1px solid #e6e7ee}
+  .pager a{flex:1;background:#f6f5ff;border:1px solid #e3e0ff;border-radius:12px;padding:14px 18px;text-decoration:none;transition:.15s}
+  .pager a:hover{background:#eeebff;border-color:#c9c2ff}
+  .pager a span{display:block;font-size:11.5px;color:#8a84c9;letter-spacing:.08em;margin-bottom:6px}
+  .pager a b{font-size:14px;color:#2b2d3f;line-height:1.45;font-weight:600}
+  .pager a.next{text-align:right}
+  @media(max-width:700px){.pager{flex-direction:column}.pager a.next{text-align:left}}
+  .brand{font-size:17px;font-weight:700;color:#1a1b22;margin-bottom:30px;letter-spacing:.02em;line-height:1.4}
+  .brand i{display:block;font-style:normal;font-size:11px;font-weight:500;color:#8a8fa0;letter-spacing:.14em;margin-top:4px;text-transform:uppercase}
+  .group{font-size:11.5px;color:#8a8fa0;letter-spacing:.1em;margin:26px 0 10px}
+  .side a.nav{display:block;font-size:13.5px;color:#3a3f4d;text-decoration:none;padding:7px 12px;border-radius:8px;margin-bottom:2px;transition:.15s}
+  .side a.nav:hover{background:#fff;color:#1a1b22}
+  .side a.nav.on{background:#f2f0ff;color:#6a5cff;font-weight:600}
+  .paper{margin:36px auto 60px}
+  .layout{padding-right:12px}
+  @media(max-width:1100px){.paper{margin:36px auto 60px}}
+  @media(max-width:900px){.layout{flex-direction:column}.side{position:static;width:100%;height:auto;padding:24px}.paper{margin:0 auto 60px}}
+  @media print{.layout{display:block}.side{display:none}.paper{margin:0 auto}}
+</style>
+</head>
+<body><div class="layout">
+  <aside class="side">
+    <div class="brand">Eibee 洞察中心<i>Insight Center</i></div>
+    <div class="group">本期报告 · 2026-11</div>
+    <a href="report-1-performance-engine.html?sharecode=OIII2LTIPX" class="nav">01 趋势报告 · 预算迁移</a>
+    <a href="report-2-ranking-systems.html?sharecode=OIII2LTIPX" class="nav">02 平台机制 · 排序逻辑</a>
+    <a href="report-3-views-vs-value.html?sharecode=OIII2LTIPX" class="nav">03 指标口径 · 三层体系</a>
+    <a href="report-4-us-rate-card.html?sharecode=OIII2LTIPX" class="nav">04 商业合作 · 美区行情</a>
+    <a href="report-5-ai-trust.html?sharecode=OIII2LTIPX" class="nav">05 生态与AI · 信任账</a>
+    <a href="report-6-disclosure-compliance.html?sharecode=OIII2LTIPX" class="nav on">06 合规风向 · 披露规则</a>
+    <div class="group">更多</div>
+    <a class="nav" href="https://www.eibee.ai" target="_blank">Eibee 官网</a>
+  </aside>
+  <div class="paper">
+  <div class="masthead"><b>EIBEE INSIGHTS</b><span>Monthly Report · No.11 / Nov 2026</span></div>
+
+  <div class="kicker"><span class="pill">COMPLIANCE · 合规风向</span></div>
+  <h1 data-zh="美/加披露规则更新：AI 内容与联盟链接都在监管范围内" data-en="US &amp; Canada Disclosure Updates: AI Content and Affiliate Links Are Both in Scope">美/加披露规则更新：AI 内容与联盟链接都在监管范围内</h1>
+  <div class="deck" data-zh="美加监管 2026 年进入执法期：漏标披露单条罚款最高 53,088 美元，AI 内容需标注 #MadeWithAI，联盟链接逐帖披露。" data-en="US and Canadian enforcement entered a new phase in 2026: fines up to $53,088 per undisclosed post, #MadeWithAI labels required for AI content, and affiliate links disclosed on every post.">美加监管 2026 年进入执法期：漏标披露单条罚款最高 53,088 美元，AI 内容需标注 #MadeWithAI，联盟链接逐帖披露。</div>
+  <div class="meta">
+    <span data-zh="发布 &lt;b&gt;2026.11.11&lt;/b&gt;" data-en="Published &lt;b&gt;Nov 11, 2026&lt;/b&gt;">发布 <b>2026.11.11</b></span>
+    <span data-zh="期号 &lt;b&gt;2026-11&lt;/b&gt;" data-en="Issue &lt;b&gt;2026-11&lt;/b&gt;">期号 <b>2026-11</b></span>
+    <span data-zh="篇幅 &lt;b&gt;约 1,950 字&lt;/b&gt;" data-en="Length &lt;b&gt;~1,950 words&lt;/b&gt;">篇幅 <b>约 1,950 字</b></span>
+    <span data-zh="数据来源 &lt;b&gt;6 份法规与评述&lt;/b&gt;" data-en="Sources &lt;b&gt;6 regulations &amp; legal commentaries&lt;/b&gt;">数据来源 <b>6 份法规与评述</b></span>
+    <span class="toggle"><button class="on" onclick="show('cn',this)">中文</button><button onclick="show('en',this)">EN</button></span>
+  </div>
+
+  <section id="cn" class="show">
+    <div class="takeaways">
+      <h3>核心结论 Key Takeaways</h3>
+      <ol>
+        <li>#Ad 单独使用是「金标准」披露词；#Gifted（产品置换）与 #InvitedGuest（受邀出席）被正式承认为有效披露。</li>
+        <li>AI 虚拟红人须遵守与真人相同的披露义务并标注虚拟身份；AI 生成的产品画面需标注 #MadeWithAI。</li>
+        <li>联盟链接产生的佣金必须在每个含链接的帖子中单独披露。</li>
+        <li>行业自律之外还有法律兜底：加拿大《竞争法》对企业最高可罚 C$1,000 万或全球年营收 3%。</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>加拿大：2025 年 10 月版指南的六个要点</h2>
+    <p>加拿大广告自律机构 Ad Standards 于 2025 年 10 月发布新版《红人营销披露指南》，在 2018 年首版基础上补齐了 AI、联盟营销与儿童受众等新场景。面向加拿大市场投放的品牌应逐条核对：</p>
+    <table>
+      <tr><th>要点</th><th>具体要求</th></tr>
+      <tr><td>#Ad 为金标准</td><td>单独使用、不与其他词组合，最易被观众理解</td></tr>
+      <tr><td>非现金利益</td><td>免费产品（#Gifted）、活动邀请（#InvitedGuest）均构成实质性关联，需披露</td></tr>
+      <tr><td>AI 红人</td><td>遵守与真人相同的披露义务，最佳实践是标注虚拟身份（#VirtualInfluencer / #AIinfluencer）</td></tr>
+      <tr><td>AI 画面</td><td>AI 生成或显著修改的产品画面需标注（#MadeWithAI / #AIcreated）</td></tr>
+      <tr><td>联盟链接</td><td>在每个包含链接的页面与帖子中标明（#affiliate / #CommissionEarned）</td></tr>
+      <tr><td>儿童受众</td><td>披露需醒目、适龄、可理解；魁北克禁止面向 13 岁以下儿童的商业广告</td></tr>
+    </table>
+    <p>另有两条实操变化值得注意：平台自带的「付费合作」标签若能做到显著、清晰、有效，可不再额外标注；拿不准时仍建议自行加 #Ad。同时披露位置要考虑「安全区」，确保桌面端与移动端都不会被界面元素遮挡。</p>
+    <div class="stats">
+      <div class="stat"><b>#Ad</b><i>标准披露词，需单独使用</i></div>
+      <div class="stat"><b>#MadeWithAI</b><i>AI 生成或修改画面的标注</i></div>
+      <div class="stat"><b>U13</b><i>魁北克禁止面向该年龄段投放广告</i></div>
+    </div>
+
+    <h2><span class="num">02</span>别忽视法律兜底：《竞争法》罚则很重</h2>
+    <p>Ad Standards 属行业自律，但《竞争法》为其提供强制性兜底：虚假或误导性广告对企业可处最高 1,000 万加元罚款（累犯 1,500 万加元）、违法所得三倍或全球年营收 3%（取最高者）；个人首次违规最高 75 万加元。加拿大竞争局 2026–27 年度计划已将 AI 相关误导营销列为重点关注领域。</p>
+    <p>换言之，AI 披露指南本身是自愿性行业规范，但「不得误导消费者」是法定义务——两者不在同一个层级上，后者可以直接开罚。</p>
+
+    <h2><span class="num">03</span>美国市场：FTC 执法收紧，平台标签不再够用</h2>
+    <p>美国没有红人营销专门立法，FTC《背书指南》仍是基准，但 2026 年执法明显收紧：漏标披露的民事罚款单条最高 53,088 美元，品牌与红人可被连带追责，AI 生成背书与深伪内容被列入年度执法重点。平台自带的付费合作标签不被视为充分披露，仍需在正文首行写明 #Ad / #Sponsored；AI 生成的推荐内容若可能让观众误以为真实体验，需明确标注，否则可能同时构成虚假背书。</p>
+
+    <h2><span class="num">04</span>投放前合规清单</h2>
+    <ul>
+      <li>合约中写明披露义务与具体标签（#Ad / #Gifted / #affiliate / #MadeWithAI）。</li>
+      <li>Brief 明确披露位置：标题或首行、各平台安全区内、桌面与移动端均可见。</li>
+      <li>加拿大投放核查魁北克儿童广告限制；儿童向内容额外审查披露语言。</li>
+      <li>联盟合作确保每个含链接的帖子都有独立披露。</li>
+      <li>保留投放记录与内容快照，以备投诉处理与合规举证。</li>
+    </ul>
+    <blockquote>合规不是投放的终点文件，而是投放流程的一部分：披露写在合约里、标签写进 Brief、位置写进验收标准，才算真正落地。</blockquote>
+  </section>
+
+  <section id="en">
+    <div class="takeaways">
+      <h3>Key Takeaways</h3>
+      <ol>
+        <li>#Ad used alone is the gold-standard disclosure tag; #Gifted and #InvitedGuest are now officially recognized.</li>
+        <li>AI virtual influencers follow the same disclosure duties as humans and should label their nature; AI-generated product imagery needs #MadeWithAI.</li>
+        <li>Affiliate commissions must be disclosed on every post containing the link.</li>
+        <li>Beyond self-regulation lies a legal backstop: Canada's Competition Act can fine corporations up to C$10 million or 3% of worldwide revenue.</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>Canada: six takeaways from the October 2025 guidelines</h2>
+    <p>Ad Standards, Canada's advertising self-regulatory body, released an updated Influencer Marketing Disclosure Guidelines in October 2025, adding AI, affiliate marketing and child-audience scenarios to the 2018 original. Brands running Canadian campaigns should check each item:</p>
+    <table>
+      <tr><th>Item</th><th>Requirement</th></tr>
+      <tr><td>#Ad as gold standard</td><td>Used alone, not combined with other words, for maximum clarity</td></tr>
+      <tr><td>Non-cash benefits</td><td>Free products (#Gifted) and event invitations (#InvitedGuest) constitute material connections</td></tr>
+      <tr><td>AI influencers</td><td>Same disclosure duties as humans; best practice is an identity label (#VirtualInfluencer / #AIinfluencer)</td></tr>
+      <tr><td>AI imagery</td><td>AI-generated or significantly altered product imagery needs #MadeWithAI / #AIcreated</td></tr>
+      <tr><td>Affiliate links</td><td>Disclose on every page and post containing the link (#affiliate / #CommissionEarned)</td></tr>
+      <tr><td>Child audiences</td><td>Disclosures must be prominent, age-appropriate and explained; Quebec bans advertising to under-13s</td></tr>
+    </table>
+    <p>Two practical changes matter: built-in paid-partnership labels suffice where they provide prominent, clear and effective disclosure; when in doubt, add #Ad yourself. Placement should also respect "safe zones" so disclosures stay visible on desktop and mobile alike.</p>
+    <div class="stats">
+      <div class="stat"><b>#Ad</b><i>Standard tag, used on its own</i></div>
+      <div class="stat"><b>#MadeWithAI</b><i>Label for AI-generated or altered imagery</i></div>
+      <div class="stat"><b>U13</b><i>Age below which Quebec bans advertising</i></div>
+    </div>
+
+    <h2><span class="num">02</span>Don't ignore the legal backstop: Competition Act penalties</h2>
+    <p>Ad Standards is self-regulation, but the Competition Act provides a statutory backstop: false or misleading advertising can cost corporations up to C$10 million (C$15 million for repeat orders), three times the benefit derived, or 3% of annual worldwide revenue — whichever is greatest; individuals face up to C$750,000 on a first offence. The Competition Bureau's 2026–27 plan names AI-related deceptive marketing as a focus area.</p>
+    <p>In other words, the AI disclosure guidance is voluntary industry practice, while "do not mislead consumers" is statutory — the two sit on different levels, and the latter carries direct penalties.</p>
+
+    <h2><span class="num">03</span>The US market: FTC enforcement tightens, platform tags no longer suffice</h2>
+    <p>The US has no dedicated influencer-marketing statute, and the FTC's Endorsement Guides remain the baseline — but enforcement tightened markedly in 2026: civil penalties reach $53,088 per violation, brands and creators face joint liability, and AI-generated endorsements and deepfakes are named enforcement priorities. Built-in paid-partnership tags no longer count as adequate disclosure; #Ad or #Sponsored belongs in the first line of the caption. AI-generated endorsements that could pass as genuine experience must be labeled or risk constituting false endorsement.</p>
+
+    <h2><span class="num">04</span>A pre-campaign compliance checklist</h2>
+    <ul>
+      <li>Write disclosure duties and exact tags into contracts (#Ad / #Gifted / #affiliate / #MadeWithAI).</li>
+      <li>Specify placement in briefs: caption opening, platform safe zones, visible on desktop and mobile.</li>
+      <li>Check Quebec's child-advertising restrictions for Canadian campaigns; review disclosure language for child-oriented content.</li>
+      <li>Ensure every affiliate post carries its own disclosure.</li>
+      <li>Keep campaign records and content snapshots for complaint handling and evidence.</li>
+    </ul>
+    <blockquote>Compliance is not a closing document but part of the process: disclosure in contracts, tags in briefs, placement in acceptance criteria.</blockquote>
+  </section>
+
+  <div class="sources">
+    <h3>资料来源 Sources</h3>
+    <ul>
+      <li>Gowling WLG — Canada's updated Influencer Marketing Disclosure Guidelines（2025-10 新规逐条解读）：<a href="https://gowlingwlg.com/en/insights-resources/articles/2025/updated-influencer-marketing-disclosure-guidelines-in-canada">gowlingwlg.com</a></li>
+      <li>Lexology — Ad Standards 最新版指南要点（含魁北克儿童广告与信任数据）：<a href="https://www.lexology.com/library/detail.aspx?g=2f8dc537-7c1d-4835-a8d3-5a29afb14f9a">lexology.com</a></li>
+      <li>Blogarama — AI advertising laws around the world 2026（《竞争法》罚则与美加对比）：<a href="https://www.blogarama.com/frame?postid=75973960">blogarama.com</a></li>
+      <li>Legal 500 — 同主题法律评述（2025-12）：<a href="https://www.legal500.com/intelligence/canada/media-telecoms-it-entertainment/canada's-updated-influencer-marketing-disclosure-guidelines-navigating-ai-affiliate-marketing-child-audiences-and-more">legal500.com</a></li>
+      <li>Kurums — FTC Influencer Marketing Rules in 2026（2026 年执法动向、$53,088 罚款与连带责任）：<a href="https://kurums.com/ftc-influencer-marketing-rules-in-2026-disclosure-requirements-enforcement-risk-and-what-brands-must-fix-now">kurums.com</a></li>
+      <li>Phefee — The Creator Disclosure Rules Brands Must Follow in 2026（2026 年罚款金额与执法优先级）：<a href="https://phefee.com/blogs/news/the-creator-disclosure-rules-brands-must-follow-in-2026">phefee.com</a></li>
+    </ul>
+  </div>
+  <div class="disclaimer">本报告由 EIBEE Insights 编制，法规与指南内容整理自公开文件与律所评述，具体案件请咨询专业法律顾问。报告内容供出海营销决策参考，不构成法律或投资建议。</div>
+  <div class="pager">
+    <a class="prev" href="report-5-ai-trust.html?sharecode=OIII2LTIPX"><span>← 上一篇 PREV</span><b>05 生态与AI · 信任账｜AI 内容的信任账：平台在降权，观众要标注，品牌怎么办</b></a>
+  </div>
+</div>
+</div>
+<script>
+function show(id,btn){['cn','en'].forEach(k=>document.getElementById(k).classList.toggle('show',k===id));
+document.querySelectorAll('[data-zh]').forEach(el=>el.innerHTML=id==='en'?el.dataset.en:el.dataset.zh);
+document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+</script>
+</body>
+</html>

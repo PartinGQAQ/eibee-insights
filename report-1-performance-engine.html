@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
+<title>从曝光工具到表现引擎：2026 红人营销的预算迁移 | EIBEE Insights 第 11 期</title>
+<style>
+  :root{--ink:#14161d;--ink2:#3a3f4d;--muted:#7b8190;--line:#e7e9ef;--accent:#5b3df5}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#eceef4;font-family:-apple-system,"PingFang SC","Helvetica Neue",Arial,sans-serif;color:var(--ink);line-height:1.95}
+  .paper{max-width:880px;margin:36px auto;background:#fff;padding:64px 72px 56px;box-shadow:0 2px 18px rgba(20,22,29,.06)}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .masthead b{color:var(--ink);letter-spacing:.2em}
+  .kicker{margin-top:34px}
+  .pill{display:inline-block;background:#f1eeff;color:var(--accent);font-size:12px;font-weight:600;padding:5px 14px;border-radius:3px}
+  h1{font-size:34px;line-height:1.35;letter-spacing:-.01em;margin:18px 0 14px;font-weight:700}
+  .deck{font-size:16.5px;color:var(--ink2);line-height:1.8;border-left:3px solid var(--ink);padding-left:16px;margin-bottom:26px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:30px}
+  .meta b{color:var(--ink);font-weight:600}
+  .toggle{margin-left:auto}
+  .toggle button{border:1px solid var(--line);background:#fff;color:var(--muted);font-size:12px;padding:4px 12px;cursor:pointer}
+  .toggle button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  section{display:none}section.show{display:block}
+  h2{font-size:20px;margin:40px 0 14px;font-weight:700;display:flex;align-items:baseline;gap:12px}
+  h2 .num{font-size:12px;color:var(--accent);letter-spacing:.14em;font-weight:700}
+  p{margin-bottom:15px;font-size:15.5px;color:var(--ink2)}
+  ul,ol{margin:0 0 16px 22px}li{margin-bottom:9px;font-size:15.5px;color:var(--ink2)}
+  .takeaways{background:#f7f6ff;border:1px solid #e2dcff;padding:22px 26px;margin-bottom:32px}
+  .takeaways h3{font-size:12.5px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+  .takeaways li{font-size:14.5px;margin-bottom:7px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:22px 0 26px}
+  .stat{background:#fafbfd;padding:18px}
+  .stat b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.2}
+  .stat i{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+  table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:14px}
+  th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left}
+  th{background:#f7f8fb;font-size:12.5px;font-weight:600;letter-spacing:.04em;border-top:2px solid var(--ink)}
+  blockquote{margin:24px 0;padding:18px 24px;background:#fafbfd;border-left:3px solid var(--accent);font-size:15.5px;color:var(--ink)}
+  .sources{margin-top:46px;border-top:2px solid var(--ink);padding-top:18px}
+  .sources h3{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .sources li{font-size:13px;margin-bottom:8px}
+  .sources a{color:var(--accent);text-decoration:none;word-break:break-all}
+  .disclaimer{margin-top:28px;font-size:12px;color:var(--muted);line-height:1.8;background:#f7f8fb;padding:16px 20px}
+  @media(max-width:700px){.paper{padding:36px 22px;margin:0}.stats{grid-template-columns:1fr}h1{font-size:26px}}
+  @media print{body{background:#fff}.paper{box-shadow:none;margin:0;max-width:none}}
+
+  .layout{display:flex;min-height:100vh}
+  .side{width:250px;flex-shrink:0;background:#fff;border-right:1px solid #e6e7ee;padding:34px 26px;position:sticky;top:0;height:100vh;overflow:auto}
+  .pager{display:flex;gap:14px;margin-top:44px;padding-top:26px;border-top:1px solid #e6e7ee}
+  .pager a{flex:1;background:#f6f5ff;border:1px solid #e3e0ff;border-radius:12px;padding:14px 18px;text-decoration:none;transition:.15s}
+  .pager a:hover{background:#eeebff;border-color:#c9c2ff}
+  .pager a span{display:block;font-size:11.5px;color:#8a84c9;letter-spacing:.08em;margin-bottom:6px}
+  .pager a b{font-size:14px;color:#2b2d3f;line-height:1.45;font-weight:600}
+  .pager a.next{text-align:right}
+  @media(max-width:700px){.pager{flex-direction:column}.pager a.next{text-align:left}}
+  .brand{font-size:17px;font-weight:700;color:#1a1b22;margin-bottom:30px;letter-spacing:.02em;line-height:1.4}
+  .brand i{display:block;font-style:normal;font-size:11px;font-weight:500;color:#8a8fa0;letter-spacing:.14em;margin-top:4px;text-transform:uppercase}
+  .group{font-size:11.5px;color:#8a8fa0;letter-spacing:.1em;margin:26px 0 10px}
+  .side a.nav{display:block;font-size:13.5px;color:#3a3f4d;text-decoration:none;padding:7px 12px;border-radius:8px;margin-bottom:2px;transition:.15s}
+  .side a.nav:hover{background:#fff;color:#1a1b22}
+  .side a.nav.on{background:#f2f0ff;color:#6a5cff;font-weight:600}
+  .paper{margin:36px auto 60px}
+  .layout{padding-right:12px}
+  @media(max-width:1100px){.paper{margin:36px auto 60px}}
+  @media(max-width:900px){.layout{flex-direction:column}.side{position:static;width:100%;height:auto;padding:24px}.paper{margin:0 auto 60px}}
+  @media print{.layout{display:block}.side{display:none}.paper{margin:0 auto}}
+</style>
+</head>
+<body><div class="layout">
+  <aside class="side">
+    <div class="brand">Eibee 洞察中心<i>Insight Center</i></div>
+    <div class="group">本期报告 · 2026-11</div>
+    <a href="report-1-performance-engine.html?sharecode=OIII2LTIPX" class="nav on">01 趋势报告 · 预算迁移</a>
+    <a href="report-2-ranking-systems.html?sharecode=OIII2LTIPX" class="nav">02 平台机制 · 排序逻辑</a>
+    <a href="report-3-views-vs-value.html?sharecode=OIII2LTIPX" class="nav">03 指标口径 · 三层体系</a>
+    <a href="report-4-us-rate-card.html?sharecode=OIII2LTIPX" class="nav">04 商业合作 · 美区行情</a>
+    <a href="report-5-ai-trust.html?sharecode=OIII2LTIPX" class="nav">05 生态与AI · 信任账</a>
+    <a href="report-6-disclosure-compliance.html?sharecode=OIII2LTIPX" class="nav">06 合规风向 · 披露规则</a>
+    <div class="group">更多</div>
+    <a class="nav" href="https://www.eibee.ai" target="_blank">Eibee 官网</a>
+  </aside>
+  <div class="paper">
+  <div class="masthead"><b>EIBEE INSIGHTS</b><span>Monthly Report · No.11 / Nov 2026</span></div>
+
+  <div class="kicker"><span class="pill">TREND REPORT · 趋势报告</span></div>
+  <h1 data-zh="从曝光工具到表现引擎：2026 红人营销的预算迁移" data-en="From Exposure Tool to Performance Engine: Where Creator Budgets Are Moving in 2026">从曝光工具到表现引擎：2026 红人营销的预算迁移</h1>
+  <div class="deck" data-zh="微型创作者互动率约为头部账号 3 倍、单条成本低约 60%，预算正从买曝光转向按效果结算的长期合作。" data-en="Micro creators deliver about 3x the engagement of top-tier accounts at roughly 60% lower cost per post — and budgets are shifting from buying impressions to long-term, performance-based partnerships.">微型创作者互动率约为头部账号 3 倍、单条成本低约 60%，预算正从买曝光转向按效果结算的长期合作。</div>
+  <div class="meta">
+    <span data-zh="发布 &lt;b&gt;2026.11.11&lt;/b&gt;" data-en="Published &lt;b&gt;Nov 11, 2026&lt;/b&gt;">发布 <b>2026.11.11</b></span>
+    <span data-zh="期号 &lt;b&gt;2026-11&lt;/b&gt;" data-en="Issue &lt;b&gt;2026-11&lt;/b&gt;">期号 <b>2026-11</b></span>
+    <span data-zh="篇幅 &lt;b&gt;约 1,900 字&lt;/b&gt;" data-en="Length &lt;b&gt;~1,900 words&lt;/b&gt;">篇幅 <b>约 1,900 字</b></span>
+    <span data-zh="数据来源 &lt;b&gt;4 份公开基准&lt;/b&gt;" data-en="Sources &lt;b&gt;4 public benchmarks&lt;/b&gt;">数据来源 <b>4 份公开基准</b></span>
+    <span class="toggle"><button class="on" onclick="show('cn',this)">中文</button><button onclick="show('en',this)">EN</button></span>
+  </div>
+
+  <section id="cn" class="show">
+    <div class="takeaways">
+      <h3>核心结论 Key Takeaways</h3>
+      <ol>
+        <li>Instagram 微型创作者平均互动率约 3.86%，百万级账号约 1.21%，前者是后者的 3 倍以上。</li>
+        <li>微型创作者单条成本比头部低约 60%，同预算可激活的创作者数量多 10 倍以上。</li>
+        <li>约 73% 的品牌把优先级给了微型与中型创作者，中型（10–50 万粉）预算扩张意愿最强。</li>
+        <li>纯固定费用合作比例下降，「基础费 + 10%–15% 佣金」成为对效果负责的品牌的主流结构。</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>买曝光的逻辑正在失灵</h2>
+    <p>过去十年，品牌投放红人的默认逻辑是「按粉丝量定价、按曝光量汇报」。这条逻辑在 2025–2026 年被多个独立基准报告同时打破：Instagram 品牌帖的平均自然触达只有粉丝量的约 3.5%，且仍在以每年两位数的速度下滑；Facebook 品牌主页的触达率更低至约 1.25%。粉丝量与真实触达之间，已经不再是可以直接换算的关系——翻倍涨粉不会带来翻倍的曝光。</p>
+    <p>对红人营销来说，这意味着同样的预算必须换一种算账方式。头部创作者的单条报价仍在上涨，互动率却随粉丝规模递减。当曝光不再是粉丝量的函数，按粉丝量定价的基础就动摇了。</p>
+    <div class="stats">
+      <div class="stat"><b>3.86%</b><i>Instagram 微型创作者（&lt;15K）平均互动率</i></div>
+      <div class="stat"><b>1.21%</b><i>百万粉以上账号平均互动率</i></div>
+      <div class="stat"><b>-60%</b><i>微型创作者单条内容成本差异</i></div>
+    </div>
+
+    <h2><span class="num">02</span>预算流向「腰部以下」</h2>
+    <p>2026 年的多份统计指向同一结论：约 73% 的品牌把优先级给了微型与中型创作者。在预算扩张意向上，中型档位（10–50 万粉）明显领先于头部——这一档同时保留了互动率与可规模化触达，生产稳定性也最好，是本次预算迁移中最被低估的区间。</p>
+    <p>供给端也在变化。小型创作者的内容更接近日常表达，产品置换型合作的平均互动率达 2.19%，反而高于纯付费合作的 1.94%——内容诚意本身就是效果变量。</p>
+
+    <h2><span class="num">03</span>结算方式：从固定费到混合结构</h2>
+    <p>纯固定费用的合作比例在下降，「基础费用 + 10%–15% 归因销售佣金 + 阶梯奖金」的混合结构，成为对效果负责的品牌的主流做法：基础费保障创作者的制作投入，佣金把激励与转化结果绑定，阶梯奖金再奖励超额表现。约 25%–53% 的合作已包含绩效成分（口径因统计源而异）。</p>
+    <p>另一个被低估的杠杆是内容授权。把创作者内容授权用于付费广告二次投放（Spark Ads、whitelisting）的品牌，普遍获得 2–3 倍于品牌自制素材的互动表现与更低的 CPA，这使得「内容授权条款」成为谈判中价值最高的条款之一。</p>
+
+    <h2><span class="num">04</span>长期合作优于单次投放</h2>
+    <p>单条内容带来的曝光是一次性的，信任是复利的。多份基准报告把「长期大使计划」列为 ROI 最高的合作形态：同一位创作者在数月内反复出现，对消费者和平台推荐算法都是更强的真实偏好信号。</p>
+    <p>相应地，品牌侧的组织与考核也在换轨：筛选标准从粉丝量转向互动真实性（59.8% 的品牌报告遭遇过假量问题），KPI 从曝光量转向 CPE、CPA 与联盟转化。这三点同时发生，才构成一次真正的预算迁移，而不只是换了一批合作对象。</p>
+    <blockquote>2026 年的红人营销不再是「买一次曝光」，而是一条按效果结算、以长期信任复利的投放管线。</blockquote>
+
+    <h2><span class="num">05</span>给品牌的动作清单</h2>
+    <ul>
+      <li><b>预算分层</b>：头部做声量节点，微型与中型做日常转化；不再把全部预算押在头部。</li>
+      <li><b>结算改造</b>：新签约优先谈「基础费 + 佣金」混合结构，为效果留出对齐空间。</li>
+      <li><b>内容复用</b>：每份合约写入内容授权条款，把创作者素材变成广告素材库。</li>
+      <li><b>风控前置</b>：合作前核查互动真实性，避免为假量买单。</li>
+    </ul>
+  </section>
+
+  <section id="en">
+    <div class="takeaways">
+      <h3>Key Takeaways</h3>
+      <ol>
+        <li>Instagram micro creators average about 3.86% engagement versus roughly 1.21% for accounts above one million followers — more than 3x.</li>
+        <li>Micro posts cost about 60% less, so the same budget activates more than 10x as many creators.</li>
+        <li>About 73% of brands now prioritize micro and mid-tier creators; the 100K–500K band shows the strongest expansion intent.</li>
+        <li>Flat-fee-only deals are declining; base fee plus 10–15% commission has become the standard for performance-driven brands.</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>The exposure-buying logic is breaking down</h2>
+    <p>For a decade, the default playbook was to price creators by follower count and report by impressions. Independent benchmark studies in 2025–2026 broke that logic: the average Instagram brand post now reaches only about 3.5% of its followers, still falling at double-digit rates year over year, while Facebook pages reach roughly 1.25%. Follower count no longer converts into proportional reach.</p>
+    <p>For creator marketing this means the budget math must change. Top-tier rates keep climbing while engagement declines with audience size — once exposure stops being a function of followers, follower-based pricing loses its foundation.</p>
+    <div class="stats">
+      <div class="stat"><b>3.86%</b><i>Average Instagram engagement, micro creators (&lt;15K)</i></div>
+      <div class="stat"><b>1.21%</b><i>Average engagement, accounts above 1M followers</i></div>
+      <div class="stat"><b>-60%</b><i>Cost per post difference for micro creators</i></div>
+    </div>
+
+    <h2><span class="num">02</span>Budgets move below the top tier</h2>
+    <p>Across 2026 surveys, about 73% of brands prioritize micro and mid-tier creators, and expansion intent is strongest for the 100K–500K band — the tier that keeps both engagement and scalable reach, with the most reliable production. It is the most underused segment in this budget shift.</p>
+    <p>The supply side is shifting too. Smaller creators produce content closer to everyday expression, and gifted collaborations average 2.19% engagement versus 1.94% for paid ones — sincerity is itself a performance variable.</p>
+
+    <h2><span class="num">03</span>Deal structure: from flat fee to hybrid</h2>
+    <p>Flat-fee-only deals are declining. The hybrid structure — base fee plus a 10–15% commission on attributed sales plus tiered bonuses — is now standard for performance-driven brands: the base covers production, the commission aligns incentives with outcomes, and the bonus rewards overperformance. Roughly 25–53% of campaigns include a performance component.</p>
+    <p>The most underrated lever is content licensing. Brands that license creator content for paid amplification (Spark Ads, whitelisting) consistently see 2–3x engagement versus brand-made creative and lower CPAs, making licensing terms among the most valuable clauses in any negotiation.</p>
+
+    <h2><span class="num">04</span>Long-term partnerships beat one-off posts</h2>
+    <p>A single post buys one impression; trust compounds. Multiple benchmark reports rank long-term ambassador programs as the highest-ROI format: repeated appearances signal genuine preference to both consumers and recommendation algorithms.</p>
+    <p>Selection and measurement are changing with it: criteria shift from follower count to engagement authenticity (59.8% of brands report exposure to fake followers or bot metrics), and KPIs move from impressions to CPE, CPA and affiliate conversions. Only when all three shift together is it a real budget migration rather than a different roster.</p>
+    <blockquote>Creator marketing in 2026 is no longer buying exposure once — it is a performance-settled pipeline built on compounding trust.</blockquote>
+
+    <h2><span class="num">05</span>An action list for brands</h2>
+    <ul>
+      <li><b>Tier the budget</b>: top creators for launch moments, micro and mid-tier for always-on conversion.</li>
+      <li><b>Rework deals</b>: negotiate hybrid base-plus-commission structures for new contracts.</li>
+      <li><b>Reuse content</b>: write licensing clauses into every contract and build an ad-ready creator asset library.</li>
+      <li><b>Front-load risk checks</b>: verify engagement authenticity before signing.</li>
+    </ul>
+  </section>
+
+  <div class="sources">
+    <h3>资料来源 Sources</h3>
+    <ul>
+      <li>Influencer Marketing Hub — Macro Influencers Explained（互动率与报价分层基准）：<a href="https://influencermarketinghub.com/?p=228467">influencermarketinghub.com</a></li>
+      <li>Influencer Marketing Benchmark Report（微型 3.86% 与头部 1.21% 原始数据）：<a href="https://influencermarketinghub.com/ebooks/influencer_marketing_benchmark_report_2021.pdf">influencermarketinghub.com/ebooks</a></li>
+      <li>AffiliateBay — Influencer Marketing Statistics 2026（成本对比、混合结算、假量数据）：<a href="https://affiliatebay.net/de/influencer-marketing-statistics-roi-trends">affiliatebay.net</a></li>
+      <li>Storika — Mid-tier creators in 2026（中型档位分析）：<a href="https://www.storika.ai/guides/mid-tier-creator-strategy">storika.ai</a></li>
+    </ul>
+  </div>
+  <div class="disclaimer">本报告由 EIBEE Insights 编制，数据与观点整理自公开行业报告与监管文件，标注的报价区间为行业公开汇总值，实际成交以询价为准。报告内容供出海营销决策参考，不构成法律或投资建议。</div>
+  <div class="pager">
+    <a class="next" href="report-2-ranking-systems.html?sharecode=OIII2LTIPX"><span>下一篇 NEXT →</span><b>02 平台机制 · 排序逻辑｜不止一套算法：Feed、Reels、Stories 与推荐流的排序逻辑</b></a>
+  </div>
+</div>
+</div>
+<script>
+function show(id,btn){['cn','en'].forEach(k=>document.getElementById(k).classList.toggle('show',k===id));
+document.querySelectorAll('[data-zh]').forEach(el=>el.innerHTML=id==='en'?el.dataset.en:el.dataset.zh);
+document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+</script>
+</body>
+</html>

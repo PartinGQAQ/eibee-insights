@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
+<title>播放量更大，不等于更有价值：红人营销的三层指标体系 | EIBEE Insights 第 11 期</title>
+<style>
+  :root{--ink:#14161d;--ink2:#3a3f4d;--muted:#7b8190;--line:#e7e9ef;--accent:#5b3df5}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#eceef4;font-family:-apple-system,"PingFang SC","Helvetica Neue",Arial,sans-serif;color:var(--ink);line-height:1.95}
+  .paper{max-width:880px;margin:36px auto;background:#fff;padding:64px 72px 56px;box-shadow:0 2px 18px rgba(20,22,29,.06)}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .masthead b{color:var(--ink);letter-spacing:.2em}
+  .kicker{margin-top:34px}
+  .pill{display:inline-block;background:#e9f8f1;color:#0e9f6e;font-size:12px;font-weight:600;padding:5px 14px;border-radius:3px}
+  h1{font-size:34px;line-height:1.35;letter-spacing:-.01em;margin:18px 0 14px;font-weight:700}
+  .deck{font-size:16.5px;color:var(--ink2);line-height:1.8;border-left:3px solid var(--ink);padding-left:16px;margin-bottom:26px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:30px}
+  .meta b{color:var(--ink);font-weight:600}
+  .toggle{margin-left:auto}
+  .toggle button{border:1px solid var(--line);background:#fff;color:var(--muted);font-size:12px;padding:4px 12px;cursor:pointer}
+  .toggle button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  section{display:none}section.show{display:block}
+  h2{font-size:20px;margin:40px 0 14px;font-weight:700;display:flex;align-items:baseline;gap:12px}
+  h2 .num{font-size:12px;color:var(--accent);letter-spacing:.14em;font-weight:700}
+  p{margin-bottom:15px;font-size:15.5px;color:var(--ink2)}
+  ul,ol{margin:0 0 16px 22px}li{margin-bottom:9px;font-size:15.5px;color:var(--ink2)}
+  .takeaways{background:#f4fbf8;border:1px solid #d2f0e3;padding:22px 26px;margin-bottom:32px}
+  .takeaways h3{font-size:12.5px;letter-spacing:.12em;color:#0e9f6e;text-transform:uppercase;margin-bottom:12px}
+  .takeaways li{font-size:14.5px;margin-bottom:7px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:22px 0 26px}
+  .stat{background:#fafbfd;padding:18px}
+  .stat b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.2}
+  .stat i{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+  table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:14px}
+  th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+  th{background:#f7f8fb;font-size:12.5px;font-weight:600;letter-spacing:.04em;border-top:2px solid var(--ink)}
+  blockquote{margin:24px 0;padding:18px 24px;background:#fafbfd;border-left:3px solid var(--accent);font-size:15.5px;color:var(--ink)}
+  .sources{margin-top:46px;border-top:2px solid var(--ink);padding-top:18px}
+  .sources h3{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .sources li{font-size:13px;margin-bottom:8px}
+  .sources a{color:var(--accent);text-decoration:none;word-break:break-all}
+  .disclaimer{margin-top:28px;font-size:12px;color:var(--muted);line-height:1.8;background:#f7f8fb;padding:16px 20px}
+  @media(max-width:700px){.paper{padding:36px 22px;margin:0}.stats{grid-template-columns:1fr}h1{font-size:26px}}
+  @media print{body{background:#fff}.paper{box-shadow:none;margin:0;max-width:none}}
+
+  .layout{display:flex;min-height:100vh}
+  .side{width:250px;flex-shrink:0;background:#fff;border-right:1px solid #e6e7ee;padding:34px 26px;position:sticky;top:0;height:100vh;overflow:auto}
+  .pager{display:flex;gap:14px;margin-top:44px;padding-top:26px;border-top:1px solid #e6e7ee}
+  .pager a{flex:1;background:#f6f5ff;border:1px solid #e3e0ff;border-radius:12px;padding:14px 18px;text-decoration:none;transition:.15s}
+  .pager a:hover{background:#eeebff;border-color:#c9c2ff}
+  .pager a span{display:block;font-size:11.5px;color:#8a84c9;letter-spacing:.08em;margin-bottom:6px}
+  .pager a b{font-size:14px;color:#2b2d3f;line-height:1.45;font-weight:600}
+  .pager a.next{text-align:right}
+  @media(max-width:700px){.pager{flex-direction:column}.pager a.next{text-align:left}}
+  .brand{font-size:17px;font-weight:700;color:#1a1b22;margin-bottom:30px;letter-spacing:.02em;line-height:1.4}
+  .brand i{display:block;font-style:normal;font-size:11px;font-weight:500;color:#8a8fa0;letter-spacing:.14em;margin-top:4px;text-transform:uppercase}
+  .group{font-size:11.5px;color:#8a8fa0;letter-spacing:.1em;margin:26px 0 10px}
+  .side a.nav{display:block;font-size:13.5px;color:#3a3f4d;text-decoration:none;padding:7px 12px;border-radius:8px;margin-bottom:2px;transition:.15s}
+  .side a.nav:hover{background:#fff;color:#1a1b22}
+  .side a.nav.on{background:#f2f0ff;color:#6a5cff;font-weight:600}
+  .paper{margin:36px auto 60px}
+  .layout{padding-right:12px}
+  @media(max-width:1100px){.paper{margin:36px auto 60px}}
+  @media(max-width:900px){.layout{flex-direction:column}.side{position:static;width:100%;height:auto;padding:24px}.paper{margin:0 auto 60px}}
+  @media print{.layout{display:block}.side{display:none}.paper{margin:0 auto}}
+</style>
+</head>
+<body><div class="layout">
+  <aside class="side">
+    <div class="brand">Eibee 洞察中心<i>Insight Center</i></div>
+    <div class="group">本期报告 · 2026-11</div>
+    <a href="report-1-performance-engine.html?sharecode=OIII2LTIPX" class="nav">01 趋势报告 · 预算迁移</a>
+    <a href="report-2-ranking-systems.html?sharecode=OIII2LTIPX" class="nav">02 平台机制 · 排序逻辑</a>
+    <a href="report-3-views-vs-value.html?sharecode=OIII2LTIPX" class="nav on">03 指标口径 · 三层体系</a>
+    <a href="report-4-us-rate-card.html?sharecode=OIII2LTIPX" class="nav">04 商业合作 · 美区行情</a>
+    <a href="report-5-ai-trust.html?sharecode=OIII2LTIPX" class="nav">05 生态与AI · 信任账</a>
+    <a href="report-6-disclosure-compliance.html?sharecode=OIII2LTIPX" class="nav">06 合规风向 · 披露规则</a>
+    <div class="group">更多</div>
+    <a class="nav" href="https://www.eibee.ai" target="_blank">Eibee 官网</a>
+  </aside>
+  <div class="paper">
+  <div class="masthead"><b>EIBEE INSIGHTS</b><span>Monthly Report · No.11 / Nov 2026</span></div>
+
+  <div class="kicker"><span class="pill">METRIC STANDARDS · 指标口径</span></div>
+  <h1 data-zh="播放量更大，不等于更有价值：红人营销的三层指标体系" data-en="More Views Isn&#x27;t More Value: A Three-Layer Measurement Framework for Creator Marketing">播放量更大，不等于更有价值：红人营销的三层指标体系</h1>
+  <div class="deck" data-zh="曝光、关注质量与生意结果必须分层看，否则大数字会掩盖真实表现；本文给出一套可直接落地的三层指标框架。" data-en="Impressions, audience quality and business outcomes must be read in separate layers, or big numbers hide weak performance. This report offers a three-layer framework you can apply directly.">曝光、关注质量与生意结果必须分层看，否则大数字会掩盖真实表现；本文给出一套可直接落地的三层指标框架。</div>
+  <div class="meta">
+    <span data-zh="发布 &lt;b&gt;2026.11.11&lt;/b&gt;" data-en="Published &lt;b&gt;Nov 11, 2026&lt;/b&gt;">发布 <b>2026.11.11</b></span>
+    <span data-zh="期号 &lt;b&gt;2026-11&lt;/b&gt;" data-en="Issue &lt;b&gt;2026-11&lt;/b&gt;">期号 <b>2026-11</b></span>
+    <span data-zh="篇幅 &lt;b&gt;约 1,750 字&lt;/b&gt;" data-en="Length &lt;b&gt;~1,750 words&lt;/b&gt;">篇幅 <b>约 1,750 字</b></span>
+    <span data-zh="数据来源 &lt;b&gt;3 份公开基准&lt;/b&gt;" data-en="Sources &lt;b&gt;3 public benchmarks&lt;/b&gt;">数据来源 <b>3 份公开基准</b></span>
+    <span class="toggle"><button class="on" onclick="show('cn',this)">中文</button><button onclick="show('en',this)">EN</button></span>
+  </div>
+
+  <section id="cn" class="show">
+    <div class="takeaways">
+      <h3>核心结论 Key Takeaways</h3>
+      <ol>
+        <li>Instagram 中位互动率已降至约 0.30%，TikTok 约 2.01%；同等播放量在不同平台的注意力质量完全不同。</li>
+        <li>指标体系应分三层：曝光层看规模、关注层看质量、生意层看结果，逐层验证。</li>
+        <li>成本口径上，微型创作者单次互动成本约 $0.20，低于宏观创作者的约 $0.33。</li>
+        <li>产品置换合作的互动率约 2.19%，高于纯付费合作的 1.94%——诚意是可量化的效果变量。</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>为什么「大数字」经常骗人</h2>
+    <p>红人合作复盘会上最常见的汇报是播放量和曝光量。问题在于：播放量衡量的是「多少人滑过」，不是「多少人被影响」。平台侧的数据印证了这一点——Instagram 中位互动率已降至约 0.30%，TikTok 以约 2.01% 位居各平台之首。同为百万播放，发生在两个平台上是完全不同的注意力质量。</p>
+    <p>如果一个品牌只用播放量横向对比不同创作者、不同平台，排序结果几乎必然误导预算分配：买得到播放的账号被高估，买得到互动的账号被低估。</p>
+    <div class="stats">
+      <div class="stat"><b>0.30%</b><i>Instagram 中位互动率</i></div>
+      <div class="stat"><b>2.01%</b><i>TikTok 中位互动率（各平台最高）</i></div>
+      <div class="stat"><b>18×</b><i>同账号内 Reels 与静态图的触达差距</i></div>
+    </div>
+
+    <h2><span class="num">02</span>三层指标体系</h2>
+    <p>把复盘口径分成三层，每一层只回答一个问题：</p>
+    <table>
+      <tr><th>层级</th><th>回答的问题</th><th>核心指标</th></tr>
+      <tr><td>曝光层</td><td>有多少人看到？</td><td>触达率、展示量、CPM</td></tr>
+      <tr><td>关注层</td><td>看到的人真的在意吗？</td><td>完播率、收藏、分享、评论质量、私信转化</td></tr>
+      <tr><td>生意层</td><td>影响了什么结果？</td><td>链接点击率、优惠码用量、联盟转化、CPA / CPE</td></tr>
+    </table>
+    <p>曝光层只负责确认「量」。Facebook 小主页触达 4.35%、大主页仅 0.50% 的数据说明，同一档预算在不同账号上的真实曝光可能相差数倍，这一层的可比性远比看上去低。</p>
+
+    <h2><span class="num">03</span>关注层：当前算法权重最高的信号</h2>
+    <p>完播率、收藏、分享、私信转化，是当前算法权重最高的一组信号，也是创作者与受众关系质量的直接体现。行业数据显示，产品置换（gifted）合作的平均互动率约 2.19%，反而高于纯付费合作的 1.94%——当创作者真的喜欢一个产品时，内容本身的诚意会转化成互动。</p>
+    <p>这一层的实践意义在于：与其在曝光层追更大的数字，不如在关注层确认「这条内容有没有被保存、被转发、被回复」。这三个动作比点赞更难伪造，也更接近真实购买意向。</p>
+
+    <h2><span class="num">04</span>生意层与一个落地规则</h2>
+    <p>生意层看链接点击率、优惠码用量、联盟转化与 CPA / CPE。成本口径上，微型创作者单次互动成本约 $0.20，低于宏观创作者的约 $0.33；但绝对互动量与单位触达成本各有适用场景，需按目标选择，而不是一概而论。</p>
+    <p>落地规则只有一条——<b>任何一层的结论必须能被下一层验证</b>：曝光高但关注层弱，说明内容与受众错配；关注层好但生意层无动，说明转化路径缺了钩子（链接、优惠码、落地页）。只有三层都成立的合作，才值得追加预算。</p>
+    <blockquote>把口径钉死，是所有数据驱动投放的第一步：跨平台对比永远用触达率与互动率，而不是播放量绝对值。</blockquote>
+    <ul>
+      <li>不同平台对「播放」的定义不同（TikTok 即滑即算，YouTube 有最低观看时长），不可直接比较。</li>
+      <li>每场合作维护一张统一口径表：三位创作者、三层指标、同周期对比。</li>
+      <li>把三层指标写进合约的验收条款，复盘时才有据可依。</li>
+    </ul>
+  </section>
+
+  <section id="en">
+    <div class="takeaways">
+      <h3>Key Takeaways</h3>
+      <ol>
+        <li>Instagram's median engagement rate has fallen to about 0.30% versus roughly 2.01% on TikTok; equal view counts carry very different attention quality.</li>
+        <li>Split reporting into three layers — exposure for scale, attention for quality, business for outcomes — and validate each against the next.</li>
+        <li>Cost-wise, micro creators average about $0.20 per engagement versus $0.33 for macro creators.</li>
+        <li>Gifted collaborations average 2.19% engagement versus 1.94% for paid ones — sincerity is a measurable performance variable.</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>Why big numbers mislead</h2>
+    <p>The most common campaign recap is views and impressions. The problem: views measure how many people scrolled past, not how many were influenced. Platform data proves the point — Instagram's median engagement rate has fallen to about 0.30% while TikTok leads at roughly 2.01%. A million views on each are qualitatively different attention.</p>
+    <p>Ranking creators and platforms purely by view count almost guarantees misallocated budgets: accounts that can buy views get overvalued, accounts that earn interactions get undervalued.</p>
+    <div class="stats">
+      <div class="stat"><b>0.30%</b><i>Instagram median engagement rate</i></div>
+      <div class="stat"><b>2.01%</b><i>TikTok median engagement rate (highest)</i></div>
+      <div class="stat"><b>18×</b><i>Reels vs static reach on the same account</i></div>
+    </div>
+
+    <h2><span class="num">02</span>A three-layer metric system</h2>
+    <p>Split reporting into three layers, each answering one question:</p>
+    <table>
+      <tr><th>Layer</th><th>Question</th><th>Core metrics</th></tr>
+      <tr><td>Exposure</td><td>How many saw it?</td><td>Reach rate, impressions, CPM</td></tr>
+      <tr><td>Attention</td><td>Did viewers actually care?</td><td>Completion, saves, shares, comment quality, DM conversions</td></tr>
+      <tr><td>Business</td><td>What changed?</td><td>Link CTR, promo-code usage, affiliate conversions, CPA / CPE</td></tr>
+    </table>
+    <p>Exposure only confirms volume. Facebook small pages reach 4.35% of followers versus 0.50% for large ones, so identical budgets can buy several-fold different real exposure — this layer is far less comparable than it looks.</p>
+
+    <h2><span class="num">03</span>Attention: the highest-weighted signals today</h2>
+    <p>Completion rate, saves, shares and DMs carry the most weight in current ranking systems and best reflect creator-audience relationship. Industry data shows gifted collaborations average about 2.19% engagement, higher than paid collaborations at 1.94% — when creators genuinely like a product, sincerity converts into interaction.</p>
+    <p>The practical implication: rather than chasing larger exposure numbers, verify whether content was saved, shared or replied to. Those three actions are harder to fake and closer to real purchase intent.</p>
+
+    <h2><span class="num">04</span>Business layer and one operating rule</h2>
+    <p>The business layer covers link CTR, promo-code usage, affiliate conversions and CPA / CPE. On cost, micro creators average roughly $0.20 per engagement versus about $0.33 for macro; absolute interaction volume and per-reach cost each have their place, chosen by objective.</p>
+    <p>There is one operating rule: <b>every conclusion in one layer must be validated by the next</b>. High exposure with weak attention signals an audience-content mismatch; strong attention with no business movement signals a missing conversion hook (link, code, landing page). Only partnerships that hold across all three layers deserve incremental budget.</p>
+    <blockquote>Pin down definitions first: compare platforms by reach rate and engagement rate, never by raw view counts.</blockquote>
+    <ul>
+      <li>Platforms define "views" differently (TikTok counts a scroll-past; YouTube requires minimum watch time) — never compare directly.</li>
+      <li>Keep one unified scorecard per campaign: three creators, three layers, same period.</li>
+      <li>Write the three layers into contract acceptance terms so reviews have evidence.</li>
+    </ul>
+  </section>
+
+  <div class="sources">
+    <h3>资料来源 Sources</h3>
+    <ul>
+      <li>Web Tonic — Social Media Reach Benchmarks 2026（各平台触达与互动基准）：<a href="https://www.webtonic.io/blog/social-media-reach-statistics">webtonic.io</a></li>
+      <li>Storika — Mid-tier creators in 2026（CPE 与转化率分层对比）：<a href="https://www.storika.ai/guides/mid-tier-creator-strategy">storika.ai</a></li>
+      <li>AffiliateBay — Influencer Marketing Statistics 2026（gifted vs paid、效果指标）：<a href="https://affiliatebay.net/de/influencer-marketing-statistics-roi-trends">affiliatebay.net</a></li>
+    </ul>
+  </div>
+  <div class="disclaimer">本报告由 EIBEE Insights 编制，指标口径与基准值整理自公开行业报告，不同统计源的定义存在差异，引用时请注明口径。报告内容供出海营销决策参考，不构成法律或投资建议。</div>
+  <div class="pager">
+    <a class="prev" href="report-2-ranking-systems.html?sharecode=OIII2LTIPX"><span>← 上一篇 PREV</span><b>02 平台机制 · 排序逻辑｜不止一套算法：Feed、Reels、Stories 与推荐流的排序逻辑</b></a>
+    <a class="next" href="report-4-us-rate-card.html?sharecode=OIII2LTIPX"><span>下一篇 NEXT →</span><b>04 商业合作 · 美区行情｜2026 美区创作者行情：报价区间、档期与按效果付费</b></a>
+  </div>
+</div>
+</div>
+<script>
+function show(id,btn){['cn','en'].forEach(k=>document.getElementById(k).classList.toggle('show',k===id));
+document.querySelectorAll('[data-zh]').forEach(el=>el.innerHTML=id==='en'?el.dataset.en:el.dataset.zh);
+document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
+<title>2026 美区创作者行情：报价区间、档期与按效果付费 | EIBEE Insights 第 11 期</title>
+<style>
+  :root{--ink:#14161d;--ink2:#3a3f4d;--muted:#7b8190;--line:#e7e9ef;--accent:#5b3df5}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#eceef4;font-family:-apple-system,"PingFang SC","Helvetica Neue",Arial,sans-serif;color:var(--ink);line-height:1.95}
+  .paper{max-width:880px;margin:36px auto;background:#fff;padding:64px 72px 56px;box-shadow:0 2px 18px rgba(20,22,29,.06)}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .masthead b{color:var(--ink);letter-spacing:.2em}
+  .kicker{margin-top:34px}
+  .pill{display:inline-block;background:#fff4e8;color:#c2700a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:3px}
+  h1{font-size:34px;line-height:1.35;letter-spacing:-.01em;margin:18px 0 14px;font-weight:700}
+  .deck{font-size:16.5px;color:var(--ink2);line-height:1.8;border-left:3px solid var(--ink);padding-left:16px;margin-bottom:26px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:30px}
+  .meta b{color:var(--ink);font-weight:600}
+  .toggle{margin-left:auto}
+  .toggle button{border:1px solid var(--line);background:#fff;color:var(--muted);font-size:12px;padding:4px 12px;cursor:pointer}
+  .toggle button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  section{display:none}section.show{display:block}
+  h2{font-size:20px;margin:40px 0 14px;font-weight:700;display:flex;align-items:baseline;gap:12px}
+  h2 .num{font-size:12px;color:var(--accent);letter-spacing:.14em;font-weight:700}
+  p{margin-bottom:15px;font-size:15.5px;color:var(--ink2)}
+  ul,ol{margin:0 0 16px 22px}li{margin-bottom:9px;font-size:15.5px;color:var(--ink2)}
+  .takeaways{background:#fffaf3;border:1px solid #f6e3c8;padding:22px 26px;margin-bottom:32px}
+  .takeaways h3{font-size:12.5px;letter-spacing:.12em;color:#c2700a;text-transform:uppercase;margin-bottom:12px}
+  .takeaways li{font-size:14.5px;margin-bottom:7px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:22px 0 26px}
+  .stat{background:#fafbfd;padding:18px}
+  .stat b{display:block;font-size:24px;letter-spacing:-.02em;line-height:1.2}
+  .stat i{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+  table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:14px}
+  th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+  th{background:#f7f8fb;font-size:12.5px;font-weight:600;letter-spacing:.04em;border-top:2px solid var(--ink)}
+  blockquote{margin:24px 0;padding:18px 24px;background:#fafbfd;border-left:3px solid var(--accent);font-size:15.5px;color:var(--ink)}
+  .sources{margin-top:46px;border-top:2px solid var(--ink);padding-top:18px}
+  .sources h3{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .sources li{font-size:13px;margin-bottom:8px}
+  .sources a{color:var(--accent);text-decoration:none;word-break:break-all}
+  .disclaimer{margin-top:28px;font-size:12px;color:var(--muted);line-height:1.8;background:#f7f8fb;padding:16px 20px}
+  @media(max-width:700px){.paper{padding:36px 22px;margin:0}.stats{grid-template-columns:1fr}h1{font-size:26px}}
+  @media print{body{background:#fff}.paper{box-shadow:none;margin:0;max-width:none}}
+
+  .layout{display:flex;min-height:100vh}
+  .side{width:250px;flex-shrink:0;background:#fff;border-right:1px solid #e6e7ee;padding:34px 26px;position:sticky;top:0;height:100vh;overflow:auto}
+  .pager{display:flex;gap:14px;margin-top:44px;padding-top:26px;border-top:1px solid #e6e7ee}
+  .pager a{flex:1;background:#f6f5ff;border:1px solid #e3e0ff;border-radius:12px;padding:14px 18px;text-decoration:none;transition:.15s}
+  .pager a:hover{background:#eeebff;border-color:#c9c2ff}
+  .pager a span{display:block;font-size:11.5px;color:#8a84c9;letter-spacing:.08em;margin-bottom:6px}
+  .pager a b{font-size:14px;color:#2b2d3f;line-height:1.45;font-weight:600}
+  .pager a.next{text-align:right}
+  @media(max-width:700px){.pager{flex-direction:column}.pager a.next{text-align:left}}
+  .brand{font-size:17px;font-weight:700;color:#1a1b22;margin-bottom:30px;letter-spacing:.02em;line-height:1.4}
+  .brand i{display:block;font-style:normal;font-size:11px;font-weight:500;color:#8a8fa0;letter-spacing:.14em;margin-top:4px;text-transform:uppercase}
+  .group{font-size:11.5px;color:#8a8fa0;letter-spacing:.1em;margin:26px 0 10px}
+  .side a.nav{display:block;font-size:13.5px;color:#3a3f4d;text-decoration:none;padding:7px 12px;border-radius:8px;margin-bottom:2px;transition:.15s}
+  .side a.nav:hover{background:#fff;color:#1a1b22}
+  .side a.nav.on{background:#f2f0ff;color:#6a5cff;font-weight:600}
+  .paper{margin:36px auto 60px}
+  .layout{padding-right:12px}
+  @media(max-width:1100px){.paper{margin:36px auto 60px}}
+  @media(max-width:900px){.layout{flex-direction:column}.side{position:static;width:100%;height:auto;padding:24px}.paper{margin:0 auto 60px}}
+  @media print{.layout{display:block}.side{display:none}.paper{margin:0 auto}}
+</style>
+</head>
+<body><div class="layout">
+  <aside class="side">
+    <div class="brand">Eibee 洞察中心<i>Insight Center</i></div>
+    <div class="group">本期报告 · 2026-11</div>
+    <a href="report-1-performance-engine.html?sharecode=OIII2LTIPX" class="nav">01 趋势报告 · 预算迁移</a>
+    <a href="report-2-ranking-systems.html?sharecode=OIII2LTIPX" class="nav">02 平台机制 · 排序逻辑</a>
+    <a href="report-3-views-vs-value.html?sharecode=OIII2LTIPX" class="nav">03 指标口径 · 三层体系</a>
+    <a href="report-4-us-rate-card.html?sharecode=OIII2LTIPX" class="nav on">04 商业合作 · 美区行情</a>
+    <a href="report-5-ai-trust.html?sharecode=OIII2LTIPX" class="nav">05 生态与AI · 信任账</a>
+    <a href="report-6-disclosure-compliance.html?sharecode=OIII2LTIPX" class="nav">06 合规风向 · 披露规则</a>
+    <div class="group">更多</div>
+    <a class="nav" href="https://www.eibee.ai" target="_blank">Eibee 官网</a>
+  </aside>
+  <div class="paper">
+  <div class="masthead"><b>EIBEE INSIGHTS</b><span>Monthly Report · No.11 / Nov 2026</span></div>
+
+  <div class="kicker"><span class="pill">COMMERCIAL RATES · 商业合作</span></div>
+  <h1 data-zh="2026 美区创作者行情：报价区间、档期与按效果付费" data-en="2026 US Creator Rates: Pricing Ranges, Availability and Performance Deals">2026 美区创作者行情：报价区间、档期与按效果付费</h1>
+  <div class="deck" data-zh="微型创作者 Instagram 单条 $100–500、YouTube $200–1,000；基础费加佣金提成成为主流结算结构。" data-en="$100–$500 per Instagram post and $200–$1,000 per YouTube video for micro creators; base fee plus commission is now the mainstream deal structure.">微型创作者 Instagram 单条 $100–500、YouTube $200–1,000；基础费加佣金提成成为主流结算结构。</div>
+  <div class="meta">
+    <span data-zh="发布 &lt;b&gt;2026.11.11&lt;/b&gt;" data-en="Published &lt;b&gt;Nov 11, 2026&lt;/b&gt;">发布 <b>2026.11.11</b></span>
+    <span data-zh="期号 &lt;b&gt;2026-11&lt;/b&gt;" data-en="Issue &lt;b&gt;2026-11&lt;/b&gt;">期号 <b>2026-11</b></span>
+    <span data-zh="篇幅 &lt;b&gt;约 1,850 字&lt;/b&gt;" data-en="Length &lt;b&gt;~1,850 words&lt;/b&gt;">篇幅 <b>约 1,850 字</b></span>
+    <span data-zh="数据来源 &lt;b&gt;4 份公开基准&lt;/b&gt;" data-en="Sources &lt;b&gt;4 public benchmarks&lt;/b&gt;">数据来源 <b>4 份公开基准</b></span>
+    <span class="toggle"><button class="on" onclick="show('cn',this)">中文</button><button onclick="show('en',this)">EN</button></span>
+  </div>
+
+  <section id="cn" class="show">
+    <div class="takeaways">
+      <h3>核心结论 Key Takeaways</h3>
+      <ol>
+        <li>美区微型创作者报价：Instagram $100–500/条、TikTok $25–125/条、YouTube $200–1,000/条。</li>
+        <li>中型档位（10–50 万粉）$1,000–5,700/条，是触达与信任平衡最好的区间。</li>
+        <li>「基础费 + 10%–15% 佣金 + 阶梯奖金」成为对效果负责的品牌的标准结构。</li>
+        <li>把创作者内容授权做二次投放，普遍获得 2–3 倍互动与更低的 CPA。</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>报价基准：按档位与平台看</h2>
+    <p>综合 2026 年公开行业基准，美区 Instagram 单条报价区间如下（实际成交受垂类、制作品质与档期影响）：</p>
+    <table>
+      <tr><th>档位</th><th>粉丝量</th><th>Instagram 单条</th><th>参考互动率</th></tr>
+      <tr><td>Nano</td><td>1K–10K</td><td>$10–100</td><td>约 4–6%</td></tr>
+      <tr><td>Micro</td><td>10K–100K</td><td>$100–1,000</td><td>约 3.86%</td></tr>
+      <tr><td>Mid-tier</td><td>100K–500K</td><td>$1,000–5,700</td><td>约 2–3%</td></tr>
+      <tr><td>Macro</td><td>500K–1M</td><td>$5,000–10,000</td><td>约 1.5–2%</td></tr>
+      <tr><td>Mega</td><td>1M+</td><td>$10,000 起</td><td>约 1.21%</td></tr>
+    </table>
+    <p>平台差异同样明显：同一档 Macro 创作者，TikTok 约 $1,250–2,500/条，Instagram 约 $5,000–10,000/条，YouTube 约 $10,000–20,000/条。微型档位则低得多——TikTok $25–125、Instagram $100–500、YouTube $200–1,000。</p>
+    <div class="stats">
+      <div class="stat"><b>$100–500</b><i>微型创作者 Instagram 单条报价</i></div>
+      <div class="stat"><b>$5,000–10,000</b><i>宏观创作者 Instagram 单条报价</i></div>
+      <div class="stat"><b>20–50 位</b><i>同等预算可激活的微型创作者数量</i></div>
+    </div>
+
+    <h2><span class="num">02</span>结算结构：从固定费到「基础费 + 佣金」</h2>
+    <p>2026 年的显著趋势是按效果付费常态化：纯固定费合作比例下降，行业推荐的标准结构是「基础费（覆盖制作成本）+ 10%–15% 归因销售佣金 + 阶梯奖金」。约 25%–53% 的合作已含绩效成分（口径因统计源而异）。</p>
+    <p>分层奖金的设计值得单独说明：当创作者达到约定销量或转化节点时解锁额外奖励，比单纯提高佣金比例更能激励中腰部创作者冲量，也更容易在一个季度内比较不同创作者的真实产出。</p>
+
+    <h2><span class="num">03</span>内容授权：被低估的第二个价值来源</h2>
+    <p>把创作者内容授权为广告素材二次投放的品牌，普遍获得 2–3 倍互动与更低的 CPA。这意味着一条合作内容的真实价值不只是自然流量，还包括它作为广告素材的生命周期——这也是「内容授权条款」在谈判中价值最高的原因。</p>
+    <p>谈判时建议明确三项：授权范围（平台与地区）、授权时长（建议 6–12 个月）、二次投放的额外费用或分成方式。提前写清楚，比事后补签省事得多。</p>
+
+    <h2><span class="num">04</span>内容电商与预算分配</h2>
+    <p>TikTok Shop 是目前增速最快的合作场景：过半品牌已在用或计划使用，创作者在内容中直接挂车转化的数据在联盟类目中居前。YouTube 长视频对转化类目标依然有效——其观看带来的购买意向约为展示广告的 3.2 倍。</p>
+    <p>建议的预算切法：声量节点用头部、日常转化用微型与中型、内容电商单独设预算线并按 GMV 复盘。三条线分开核算，才能看出钱花在哪一段真正有效。</p>
+
+    <h2><span class="num">05</span>加拿大市场备注</h2>
+    <p>加拿大通常单列预算与报价（以加元 CAD 计），魁北克市场需法语内容与本地化口径；该省对面向 13 岁以下儿童的商业广告有专门限制，涉及儿童向产品时须提前核查合规（详见本刊合规篇）。</p>
+    <blockquote>报价是起点不是结论：同样的预算，投微型档可以铺 20–50 位创作者，投头部只够买 1 条。选择哪种，取决于你要声量还是转化。</blockquote>
+  </section>
+
+  <section id="en">
+    <div class="takeaways">
+      <h3>Key Takeaways</h3>
+      <ol>
+        <li>US micro creator rates: $100–500 per Instagram post, $25–125 on TikTok, $200–1,000 on YouTube.</li>
+        <li>The mid-tier (100K–500K) sits at $1,000–5,700 per post — the best balance of reach and trust.</li>
+        <li>Base fee plus 10–15% commission plus tiered bonuses has become the standard structure for performance-driven brands.</li>
+        <li>Licensing creator content for paid amplification consistently delivers 2–3x engagement and lower CPAs.</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>Rate benchmarks by tier and platform</h2>
+    <p>Aggregating published 2026 industry benchmarks, US Instagram per-post rates look like this (actual deals vary by niche, production quality and availability):</p>
+    <table>
+      <tr><th>Tier</th><th>Followers</th><th>Instagram / post</th><th>Avg engagement</th></tr>
+      <tr><td>Nano</td><td>1K–10K</td><td>$10–100</td><td>~4–6%</td></tr>
+      <tr><td>Micro</td><td>10K–100K</td><td>$100–1,000</td><td>~3.86%</td></tr>
+      <tr><td>Mid-tier</td><td>100K–500K</td><td>$1,000–5,700</td><td>~2–3%</td></tr>
+      <tr><td>Macro</td><td>500K–1M</td><td>$5,000–10,000</td><td>~1.5–2%</td></tr>
+      <tr><td>Mega</td><td>1M+</td><td>$10,000+</td><td>~1.21%</td></tr>
+    </table>
+    <p>Platform gaps are wide: at the macro tier, TikTok averages $1,250–2,500 per post, Instagram $5,000–10,000, YouTube $10,000–20,000. The micro tier is far cheaper — TikTok $25–125, Instagram $100–500, YouTube $200–1,000.</p>
+    <div class="stats">
+      <div class="stat"><b>$100–500</b><i>Micro creator rate per Instagram post</i></div>
+      <div class="stat"><b>$5,000–10,000</b><i>Macro creator rate per Instagram post</i></div>
+      <div class="stat"><b>20–50</b><i>Micro creators activated by one macro budget</i></div>
+    </div>
+
+    <h2><span class="num">02</span>Deal structure: from flat fee to base-plus-commission</h2>
+    <p>Performance pay is normalizing: flat-fee-only deals are declining, and the standard recommended structure is a base fee (covering production) plus a 10–15% commission on attributed sales plus tiered bonuses. Roughly 25–53% of campaigns include a performance component.</p>
+    <p>Tiered bonuses deserve their own note: unlocking extra rewards at agreed sales or conversion thresholds motivates mid-tier creators to push volume more effectively than simply raising commission rates — and makes quarterly comparison across creators straightforward.</p>
+
+    <h2><span class="num">03</span>Content licensing: the undervalued second source of value</h2>
+    <p>Brands that license creator content for paid amplification consistently see 2–3x engagement and lower CPAs. A partnership's real value is not only organic traffic but the ad asset lifecycle it produces — which is why licensing clauses carry the highest value in negotiations.</p>
+    <p>Specify three things up front: scope (platforms and territories), term (6–12 months recommended), and the fee or revenue share for amplification. Writing it in advance is far cheaper than retrofitting.</p>
+
+    <h2><span class="num">04</span>Social commerce and budget allocation</h2>
+    <p>TikTok Shop is the fastest-growing collaboration scenario: more than half of brands use or plan to use it, and creator-led shoppable content converts strongly in affiliate categories. YouTube long-form still works for conversion — its viewing drives about 3.2x higher purchase intent than display ads.</p>
+    <p>A practical split: top creators for launch moments, micro and mid-tier for always-on conversion, a separate budget line for social commerce reviewed against GMV. Track the three lines separately to see which stage actually works.</p>
+
+    <h2><span class="num">05</span>A note on Canada</h2>
+    <p>Canada is typically budgeted separately (in CAD), and Quebec requires French-language content and localized positioning; the province restricts commercial advertising directed at children under 13, so compliance should be checked in advance for child-oriented products (see our compliance report).</p>
+    <blockquote>Rates are a starting point, not a conclusion: the same budget buys 20–50 micro creators or a single macro post. Which one depends on whether you need reach or conversion.</blockquote>
+  </section>
+
+  <div class="sources">
+    <h3>资料来源 Sources</h3>
+    <ul>
+      <li>Influencer Marketing Hub — Macro Influencers Explained（各平台分档报价）：<a href="https://influencermarketinghub.com/?p=228467">influencermarketinghub.com</a></li>
+      <li>Storika — Mid-tier creators in 2026（中型档位报价与生产质量）：<a href="https://www.storika.ai/guides/mid-tier-creator-strategy">storika.ai</a></li>
+      <li>AffiliateBay — Influencer Marketing Statistics 2026（混合结算、TikTok Shop 与转化数据）：<a href="https://affiliatebay.net/de/influencer-marketing-statistics-roi-trends">affiliatebay.net</a></li>
+      <li>Lexology — 加拿大披露指南与魁北克儿童广告限制：<a href="https://www.lexology.com/library/detail.aspx?g=2f8dc537-7c1d-4835-a8d3-5a29afb14f9a">lexology.com</a></li>
+    </ul>
+  </div>
+  <div class="disclaimer">本报告由 EIBEE Insights 编制，报价区间为公开行业汇总值，实际成交受垂类、档期与内容形式影响，请以询价为准。报告内容供出海营销决策参考，不构成法律或投资建议。</div>
+  <div class="pager">
+    <a class="prev" href="report-3-views-vs-value.html?sharecode=OIII2LTIPX"><span>← 上一篇 PREV</span><b>03 指标口径 · 三层体系｜播放量更大，不等于更有价值：三层指标体系</b></a>
+    <a class="next" href="report-5-ai-trust.html?sharecode=OIII2LTIPX"><span>下一篇 NEXT →</span><b>05 生态与AI · 信任账｜AI 内容的信任账：平台在降权，观众要标注，品牌怎么办</b></a>
+  </div>
+</div>
+</div>
+<script>
+function show(id,btn){['cn','en'].forEach(k=>document.getElementById(k).classList.toggle('show',k===id));
+document.querySelectorAll('[data-zh]').forEach(el=>el.innerHTML=id==='en'?el.dataset.en:el.dataset.zh);
+document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+</script>
+</body>
+</html>

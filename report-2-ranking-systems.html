@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
+<title>不止一套算法：Feed、Reels、Stories 与推荐流的排序逻辑 | EIBEE Insights 第 11 期</title>
+<style>
+  :root{--ink:#14161d;--ink2:#3a3f4d;--muted:#7b8190;--line:#e7e9ef;--accent:#5b3df5}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#eceef4;font-family:-apple-system,"PingFang SC","Helvetica Neue",Arial,sans-serif;color:var(--ink);line-height:1.95}
+  .paper{max-width:880px;margin:36px auto;background:#fff;padding:64px 72px 56px;box-shadow:0 2px 18px rgba(20,22,29,.06)}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .masthead b{color:var(--ink);letter-spacing:.2em}
+  .kicker{margin-top:34px}
+  .pill{display:inline-block;background:#e9f3ff;color:#1a7fd4;font-size:12px;font-weight:600;padding:5px 14px;border-radius:3px}
+  h1{font-size:34px;line-height:1.35;letter-spacing:-.01em;margin:18px 0 14px;font-weight:700}
+  .deck{font-size:16.5px;color:var(--ink2);line-height:1.8;border-left:3px solid var(--ink);padding-left:16px;margin-bottom:26px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:30px}
+  .meta b{color:var(--ink);font-weight:600}
+  .toggle{margin-left:auto}
+  .toggle button{border:1px solid var(--line);background:#fff;color:var(--muted);font-size:12px;padding:4px 12px;cursor:pointer}
+  .toggle button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  section{display:none}section.show{display:block}
+  h2{font-size:20px;margin:40px 0 14px;font-weight:700;display:flex;align-items:baseline;gap:12px}
+  h2 .num{font-size:12px;color:var(--accent);letter-spacing:.14em;font-weight:700}
+  p{margin-bottom:15px;font-size:15.5px;color:var(--ink2)}
+  ul,ol{margin:0 0 16px 22px}li{margin-bottom:9px;font-size:15.5px;color:var(--ink2)}
+  .takeaways{background:#f5f9ff;border:1px solid #d6e8ff;padding:22px 26px;margin-bottom:32px}
+  .takeaways h3{font-size:12.5px;letter-spacing:.12em;color:#1a7fd4;text-transform:uppercase;margin-bottom:12px}
+  .takeaways li{font-size:14.5px;margin-bottom:7px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:22px 0 26px}
+  .stat{background:#fafbfd;padding:18px}
+  .stat b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.2}
+  .stat i{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+  table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:14px}
+  th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+  th{background:#f7f8fb;font-size:12.5px;font-weight:600;letter-spacing:.04em;border-top:2px solid var(--ink)}
+  blockquote{margin:24px 0;padding:18px 24px;background:#fafbfd;border-left:3px solid var(--accent);font-size:15.5px;color:var(--ink)}
+  .sources{margin-top:46px;border-top:2px solid var(--ink);padding-top:18px}
+  .sources h3{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .sources li{font-size:13px;margin-bottom:8px}
+  .sources a{color:var(--accent);text-decoration:none;word-break:break-all}
+  .disclaimer{margin-top:28px;font-size:12px;color:var(--muted);line-height:1.8;background:#f7f8fb;padding:16px 20px}
+  @media(max-width:700px){.paper{padding:36px 22px;margin:0}.stats{grid-template-columns:1fr}h1{font-size:26px}}
+  @media print{body{background:#fff}.paper{box-shadow:none;margin:0;max-width:none}}
+
+  .layout{display:flex;min-height:100vh}
+  .side{width:250px;flex-shrink:0;background:#fff;border-right:1px solid #e6e7ee;padding:34px 26px;position:sticky;top:0;height:100vh;overflow:auto}
+  .pager{display:flex;gap:14px;margin-top:44px;padding-top:26px;border-top:1px solid #e6e7ee}
+  .pager a{flex:1;background:#f6f5ff;border:1px solid #e3e0ff;border-radius:12px;padding:14px 18px;text-decoration:none;transition:.15s}
+  .pager a:hover{background:#eeebff;border-color:#c9c2ff}
+  .pager a span{display:block;font-size:11.5px;color:#8a84c9;letter-spacing:.08em;margin-bottom:6px}
+  .pager a b{font-size:14px;color:#2b2d3f;line-height:1.45;font-weight:600}
+  .pager a.next{text-align:right}
+  @media(max-width:700px){.pager{flex-direction:column}.pager a.next{text-align:left}}
+  .brand{font-size:17px;font-weight:700;color:#1a1b22;margin-bottom:30px;letter-spacing:.02em;line-height:1.4}
+  .brand i{display:block;font-style:normal;font-size:11px;font-weight:500;color:#8a8fa0;letter-spacing:.14em;margin-top:4px;text-transform:uppercase}
+  .group{font-size:11.5px;color:#8a8fa0;letter-spacing:.1em;margin:26px 0 10px}
+  .side a.nav{display:block;font-size:13.5px;color:#3a3f4d;text-decoration:none;padding:7px 12px;border-radius:8px;margin-bottom:2px;transition:.15s}
+  .side a.nav:hover{background:#fff;color:#1a1b22}
+  .side a.nav.on{background:#f2f0ff;color:#6a5cff;font-weight:600}
+  .paper{margin:36px auto 60px}
+  .layout{padding-right:12px}
+  @media(max-width:1100px){.paper{margin:36px auto 60px}}
+  @media(max-width:900px){.layout{flex-direction:column}.side{position:static;width:100%;height:auto;padding:24px}.paper{margin:0 auto 60px}}
+  @media print{.layout{display:block}.side{display:none}.paper{margin:0 auto}}
+</style>
+</head>
+<body><div class="layout">
+  <aside class="side">
+    <div class="brand">Eibee 洞察中心<i>Insight Center</i></div>
+    <div class="group">本期报告 · 2026-11</div>
+    <a href="report-1-performance-engine.html?sharecode=OIII2LTIPX" class="nav">01 趋势报告 · 预算迁移</a>
+    <a href="report-2-ranking-systems.html?sharecode=OIII2LTIPX" class="nav on">02 平台机制 · 排序逻辑</a>
+    <a href="report-3-views-vs-value.html?sharecode=OIII2LTIPX" class="nav">03 指标口径 · 三层体系</a>
+    <a href="report-4-us-rate-card.html?sharecode=OIII2LTIPX" class="nav">04 商业合作 · 美区行情</a>
+    <a href="report-5-ai-trust.html?sharecode=OIII2LTIPX" class="nav">05 生态与AI · 信任账</a>
+    <a href="report-6-disclosure-compliance.html?sharecode=OIII2LTIPX" class="nav">06 合规风向 · 披露规则</a>
+    <div class="group">更多</div>
+    <a class="nav" href="https://www.eibee.ai" target="_blank">Eibee 官网</a>
+  </aside>
+  <div class="paper">
+  <div class="masthead"><b>EIBEE INSIGHTS</b><span>Monthly Report · No.11 / Nov 2026</span></div>
+
+  <div class="kicker"><span class="pill">PLATFORM MECHANICS · 平台机制</span></div>
+  <h1 data-zh="不止一套算法：Feed、Reels、Stories 与推荐流的排序逻辑" data-en="More Than One Algorithm: How Feed, Reels, Stories and Recommendations Rank Content">不止一套算法：Feed、Reels、Stories 与推荐流的排序逻辑</h1>
+  <div class="deck" data-zh="Instagram 静态帖自然触达仅约粉丝的 0.5%，Reels 约 9%；平台内部的格式与场景差异，比粉丝量更能决定触达。" data-en="Static Instagram posts reach only about 0.5% of followers, while Reels reach about 9%; differences in format and placement decide reach far more than follower count.">Instagram 静态帖自然触达仅约粉丝的 0.5%，Reels 约 9%；平台内部的格式与场景差异，比粉丝量更能决定触达。</div>
+  <div class="meta">
+    <span data-zh="发布 &lt;b&gt;2026.11.11&lt;/b&gt;" data-en="Published &lt;b&gt;Nov 11, 2026&lt;/b&gt;">发布 <b>2026.11.11</b></span>
+    <span data-zh="期号 &lt;b&gt;2026-11&lt;/b&gt;" data-en="Issue &lt;b&gt;2026-11&lt;/b&gt;">期号 <b>2026-11</b></span>
+    <span data-zh="篇幅 &lt;b&gt;约 1,800 字&lt;/b&gt;" data-en="Length &lt;b&gt;~1,800 words&lt;/b&gt;">篇幅 <b>约 1,800 字</b></span>
+    <span data-zh="数据来源 &lt;b&gt;3 份公开基准&lt;/b&gt;" data-en="Sources &lt;b&gt;3 public benchmarks&lt;/b&gt;">数据来源 <b>3 份公开基准</b></span>
+    <span class="toggle"><button class="on" onclick="show('cn',this)">中文</button><button onclick="show('en',this)">EN</button></span>
+  </div>
+
+  <section id="cn" class="show">
+    <div class="takeaways">
+      <h3>核心结论 Key Takeaways</h3>
+      <ol>
+        <li>Instagram 帖子平均自然触达约粉丝量的 3.5%，同比下降 12%；Facebook 主页约 1.25%，2012 年为 16%。</li>
+        <li>同一账号内，静态图片帖触达约 0.5%，Reels 约 9%，相差 18 倍——格式比粉丝量更能决定触达。</li>
+        <li>TikTok 商业账号自然触达约 5.7%，采用波浪式分发，完播率决定能否进入下一波。</li>
+        <li>四个场景排序信号不同：Feed 看兴趣、Reels 看时长、Stories 看互动历史、Explore 看收藏。</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>先修正一个前提：粉丝量不再是触达的上限</h2>
+    <p>很多品牌仍然默认「粉丝越多，看到的人越多」。对 872,075 条品牌帖的基准研究发现：2025 年 Instagram 帖子的平均自然触达约为粉丝量的 3.5%，同比再降 12%；Facebook 全部主页平均约 1.25%，而 2012 年这一数字是 16%。更值得注意的是同平台内的分化——小型主页触达 4.35%，大主页只有 0.50%，相差 8 倍以上。</p>
+    <p>换句话说，平台不是在按粉丝分发，而是在按信号分发。粉丝量只决定「有多少人可能看到」，实际触达由内容质量信号重新分配。</p>
+    <div class="stats">
+      <div class="stat"><b>3.5%</b><i>Instagram 帖子平均自然触达率（同比 -12%）</i></div>
+      <div class="stat"><b>9%</b><i>Instagram Reels 平均触达率</i></div>
+      <div class="stat"><b>5.7%</b><i>TikTok 商业账号平均自然触达率</i></div>
+    </div>
+
+    <h2><span class="num">02</span>同一平台内部：格式决定触达</h2>
+    <p>同一账号、同一条时间线里，Instagram 静态图片帖的自然触达约 0.5%，Reels 约 9%——18 倍的差距完全由格式决定。这意味着在资源有限时，把静态图文预算转向短视频，往往比追加投放金额更能改变结果。</p>
+    <p>TikTok 的分发机制更直接：新内容先推给小规模测试人群，完播率、评论与分享高于平均，才进入下一波更大的分发。前 3 秒能否给出价值，几乎决定了这条内容的命运。</p>
+
+    <h2><span class="num">03</span>四个场景，四套排序逻辑</h2>
+    <table>
+      <tr><th>场景</th><th>核心排序信号</th><th>内容含义</th></tr>
+      <tr><td>Feed 信息流</td><td>兴趣图谱匹配（Instagram 超半数内容来自未关注账号，Facebook 约 54%）</td><td>关系维护与话题延展，不再保证粉丝可见</td></tr>
+      <tr><td>Reels / 短视频</td><td>观看时长、完播率、分享</td><td>前 3 秒钩子、单一信息点、可被转发的情绪或实用价值</td></tr>
+      <tr><td>Stories</td><td>互动历史（浏览、回复、投票）</td><td>维持性触达与私域转化，不适合拉新</td></tr>
+      <tr><td>Explore 探索页</td><td>收藏权重显著高于点赞</td><td>工具型、清单型、可保存的实用内容</td></tr>
+    </table>
+    <p>这张表最常见的误用，是用一套 Brief 通投四个场景：Feed 的内容被塞进 Reels，缺钩子；Stories 的内容被做成静态图，缺互动引导。结果不是内容不好，而是内容去了不该去的地方。</p>
+
+    <h2><span class="num">04</span>对红人合作的实际含义</h2>
+    <ul>
+      <li><b>选号看形态匹配</b>：一个 5 万粉、擅长 Reels 的创作者，单条触达可能超过一个百万粉但只发静态图的账号。</li>
+      <li><b>Brief 按场景拆</b>：Feed 讲关系与场景、Reels 讲前 3 秒与完播结构、Stories 讲互动引导，一份 Brief 只服务一个场景。</li>
+      <li><b>预算随格式调</b>：同预算下优先保障短视频产能，再考虑追加投放。</li>
+    </ul>
+    <blockquote>算法奖励的是「停留、完播、收藏、分享」这类质量信号，而不是发布行为本身。对准这些信号，比追逐任何单次算法更新都更有效。</blockquote>
+  </section>
+
+  <section id="en">
+    <div class="takeaways">
+      <h3>Key Takeaways</h3>
+      <ol>
+        <li>The average Instagram post reaches about 3.5% of followers, down 12% year over year; Facebook pages average 1.25%, versus 16% in 2012.</li>
+        <li>On the same account, a static photo reaches about 0.5% while Reels reach roughly 9% — an 18x gap decided by format.</li>
+        <li>TikTok business accounts reach about 5.7% organically through wave-based distribution, where completion rate unlocks the next wave.</li>
+        <li>Each surface ranks differently: Feed by interest, Reels by watch time, Stories by interaction history, Explore by saves.</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">01</span>Fix the premise: followers no longer cap your reach</h2>
+    <p>Many brands still assume more followers mean more viewers. A benchmark study of 872,075 brand posts found the average Instagram post in 2025 reached only about 3.5% of its followers, down 12% year over year; Facebook pages average roughly 1.25%, versus 16% in 2012. The split inside each platform is sharper: small Facebook pages reach 4.35% of followers while large pages reach 0.50% — an eightfold gap.</p>
+    <p>Platforms distribute by signal, not by follower count. Follower count only defines how many people could see a post; actual reach is reallocated by content quality signals.</p>
+    <div class="stats">
+      <div class="stat"><b>3.5%</b><i>Average Instagram post reach rate (-12% YoY)</i></div>
+      <div class="stat"><b>9%</b><i>Average Instagram Reels reach rate</i></div>
+      <div class="stat"><b>5.7%</b><i>Average TikTok business account reach</i></div>
+    </div>
+
+    <h2><span class="num">02</span>Inside one platform, format decides reach</h2>
+    <p>On the same account and timeline, a static Instagram photo reaches about 0.5% of its audience while Reels reach roughly 9% — an 18x difference decided purely by format. When resources are limited, shifting static budget into short video often changes results more than adding spend.</p>
+    <p>TikTok's mechanism is more direct: a new post first goes to a small test group, and only above-average completion, comments and shares unlock the next, larger wave. The first three seconds largely decide a post's fate.</p>
+
+    <h2><span class="num">03</span>Four surfaces, four ranking logics</h2>
+    <table>
+      <tr><th>Surface</th><th>Core ranking signal</th><th>Content implication</th></tr>
+      <tr><td>Feed</td><td>Interest-graph matching (over half of Instagram feed content comes from unfollowed accounts; ~54% on Facebook)</td><td>Relationship maintenance and topic extension; follower visibility is no longer guaranteed</td></tr>
+      <tr><td>Reels / short video</td><td>Watch time, completion rate, shares</td><td>First-3-second hook, single message, emotionally or practically shareable</td></tr>
+      <tr><td>Stories</td><td>Interaction history (views, replies, polls)</td><td>Retention and DM conversion, not acquisition</td></tr>
+      <tr><td>Explore</td><td>Saves weighted far above likes</td><td>Utility, checklists, save-worthy practical content</td></tr>
+    </table>
+    <p>The most common mistake is one brief for all four surfaces: Feed content pushed into Reels without a hook; Stories built as static images without interaction prompts. The content isn't bad — it is simply in the wrong place.</p>
+
+    <h2><span class="num">04</span>What this means for creator partnerships</h2>
+    <ul>
+      <li><b>Select by format fit</b>: a 50K-follower Reels specialist can out-reach a million-follower account posting only static photos.</li>
+      <li><b>Split briefs by surface</b>: Feed for context and relationship, Reels for hooks and completion structure, Stories for interaction prompts — one brief per surface.</li>
+      <li><b>Move budget with format</b>: secure short-video capacity first, then consider paid amplification.</li>
+    </ul>
+    <blockquote>Algorithms reward dwell, completion, saves and shares — quality signals, not posting itself. Aligning with these signals beats chasing any single algorithm update.</blockquote>
+  </section>
+
+  <div class="sources">
+    <h3>资料来源 Sources</h3>
+    <ul>
+      <li>Social.plus — Only 3.5% of Followers See Your Instagram Posts（触达基准与下滑趋势）：<a href="https://www.social.plus/blog/only-3-and-a-half-procent-of-followers-see-your-instagram-posts">social.plus</a></li>
+      <li>Web Tonic — Social Media Reach Benchmarks 2026（872,075 帖研究与格式触达对比）：<a href="https://www.webtonic.io/blog/social-media-reach-statistics">webtonic.io</a></li>
+      <li>Social Media Agency — TikTok 波浪式分发与完播率机制：<a href="https://it.socialmediaagency.one/aumentare-la-portata-organica-sui-social-media-cosaltro-funziona">socialmediaagency.one</a></li>
+    </ul>
+  </div>
+  <div class="disclaimer">本报告由 EIBEE Insights 编制，数据整理自公开基准研究，触达与互动数据随平台规则、账号历史与内容形态变化，引用时请标注统计口径。报告内容供出海营销决策参考，不构成法律或投资建议。</div>
+  <div class="pager">
+    <a class="prev" href="report-1-performance-engine.html?sharecode=OIII2LTIPX"><span>← 上一篇 PREV</span><b>01 趋势报告 · 预算迁移｜从曝光工具到表现引擎：2026 红人营销的预算迁移</b></a>
+    <a class="next" href="report-3-views-vs-value.html?sharecode=OIII2LTIPX"><span>下一篇 NEXT →</span><b>03 指标口径 · 三层体系｜播放量更大，不等于更有价值：三层指标体系</b></a>
+  </div>
+</div>
+</div>
+<script>
+function show(id,btn){['cn','en'].forEach(k=>document.getElementById(k).classList.toggle('show',k===id));
+document.querySelectorAll('[data-zh]').forEach(el=>el.innerHTML=id==='en'?el.dataset.en:el.dataset.zh);
+document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+</script>
+</body>
+</html>
