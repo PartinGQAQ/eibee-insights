@@ -247,7 +247,8 @@
 function show(id,btn){['cn','en'].forEach(k=>document.getElementById(k).classList.toggle('show',k===id));
 document.querySelectorAll('[data-zh]').forEach(el=>el.innerHTML=id==='en'?el.dataset.en:el.dataset.zh);
 document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
-(function(){var m=location.search.match(/[?&]lang=(en|cn)/i);if(m){var i=m[1].toLowerCase()==='en'?1:0;var b=document.querySelectorAll('.toggle button');if(b[i])show(m[1].toLowerCase(),b[i]);}})();
+(function(){var m=location.search.match(/[?&]lang=(en|cn)/i);if(m){var i=m[1].toLowerCase()==='en'?1:0;var b=document.querySelectorAll('.toggle button');if(b[i])show(m[1].toLowerCase(),b[i]);}
+if(m&&m[1].toLowerCase()==='en'){document.querySelectorAll('.side a.nav[href^="report-"],.pager a[href^="report-"]').forEach(function(a){a.setAttribute('href',a.getAttribute('href')+'?lang=en');});}})();
 </script>
 </body>
 </html>

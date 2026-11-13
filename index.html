@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>EIBEE Insights</title>
-<meta http-equiv="refresh" content="0; url=report-1-performance-engine.html">
+<script>
+(function(){
+  var m = location.search.match(/[?&]lang=(en|cn)/i);
+  location.replace("report-1-performance-engine.html" + (m ? "?lang=" + m[1].toLowerCase() : ""));
+})();
+</script>
 </head>
 <body></body>
 </html>
